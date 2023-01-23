@@ -1,5 +1,12 @@
 module.exports = {
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+  globals: {
+    __PATH_PREFIX__: true,
+  },
+  extends: [
+    'react-app',
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'unused-imports'],
   root: true,

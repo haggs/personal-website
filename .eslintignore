@@ -1,4 +1,5 @@
+.cache
 .eslintrc.cjs
 prettier.config.js
-build
-coverage
+public
+src/gatsby-types.d.ts
