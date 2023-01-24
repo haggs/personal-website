@@ -10,7 +10,7 @@ import {
 } from './Layout.module.css';
 
 interface LayoutProps {
-  pageTitle: string;
+  pageTitle?: string;
 }
 
 const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = ({
@@ -38,19 +38,14 @@ const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = ({
             </Link>
           </li>
           <li className={navLinkItem}>
-            <Link to="/about" className={navLinkText}>
-              About
-            </Link>
-          </li>
-          <li className={navLinkItem}>
-            <Link to="/blog" className={navLinkText}>
-              Blog
+            <Link to="/stories" className={navLinkText}>
+              Stories
             </Link>
           </li>
         </ul>
       </nav>
       <main>
-        <h1 className={heading}>{pageTitle}</h1>
+        {pageTitle && <h1 className={heading}>{pageTitle}</h1>}
         {children}
       </main>
     </div>

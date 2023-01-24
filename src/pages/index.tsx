@@ -1,14 +1,14 @@
 import React from 'react';
-import Layout from '../components/Layout/Layout';
 import { StaticImage } from 'gatsby-plugin-image';
 import Seo from '../components/Seo/Seo';
+import Layout from '../components/Layout/Layout';
 
 const IndexPage: React.FC = () => {
   return (
-    <Layout pageTitle="Home Page">
-      <p>I'm making this by following the Gatsby Tutorial.</p>
+    <Layout>
+      <p>This is a placeholder for my personal website, more to come, probably.</p>
       <StaticImage
-        alt="Dan Haggerty, developer extraordinaire"
+        alt="Dan Haggerty, frontend developer"
         src="../images/profile-pic.jpg"
       />
     </Layout>
