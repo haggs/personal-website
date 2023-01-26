@@ -1,0 +1,16 @@
+.container {
+  max-width: 600px;
+}
+
+.email {
+  color: lightgray;
+}
+
+.socialLinkList {
+  list-style: none;
+  padding: 0;
+}
+
+.socialLinkList > li {
+  margin-bottom: 8px;
+}

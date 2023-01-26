@@ -1,53 +1,20 @@
 import * as React from 'react';
-import { Link, graphql, useStaticQuery } from 'gatsby';
-import {
-  container,
-  heading,
-  navLinks,
-  navLinkItem,
-  navLinkText,
-  siteTitle,
-} from './Layout.module.css';
+import { container, header, footer } from './Layout.module.css';
+import Logo from '../Logo/Logo';
+import Navigation from '../Navigation/Navigation';
+import Contact from '../Contact/Contact';
 
-interface LayoutProps {
-  pageTitle?: string;
-}
-
-const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = ({
-  pageTitle,
-  children,
-}) => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
+const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
     <div className={container}>
-      <header className={siteTitle}>{data.site.siteMetadata.title}</header>
-      <nav>
-        <ul className={navLinks}>
-          <li className={navLinkItem}>
-            <Link to="/" className={navLinkText}>
-              Home
-            </Link>
-          </li>
-          <li className={navLinkItem}>
-            <Link to="/stories" className={navLinkText}>
-              Stories
-            </Link>
-          </li>
-        </ul>
-      </nav>
-      <main>
-        {pageTitle && <h1 className={heading}>{pageTitle}</h1>}
-        {children}
-      </main>
+      <header className={header}>
+        <Logo />
+        <Navigation />
+      </header>
+      <main>{children}</main>
+      <footer className={footer}>
+        <Contact />
+      </footer>
     </div>
   );
 };

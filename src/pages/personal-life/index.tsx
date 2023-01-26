@@ -3,19 +3,19 @@ import Layout from '../../components/Layout/Layout';
 import Seo from '../../components/Seo/Seo';
 import { Link, graphql } from 'gatsby';
 
-interface StoriesPageProps {
+interface PersonalLifePageProps {
   data: any;
 }
 
-const PAGE_TITLE = 'Stories';
+const PAGE_TITLE = 'Personal Life';
 
-const StoriesPage: React.FC<StoriesPageProps> = ({ data }) => {
+const PersonalLifePage: React.FC<PersonalLifePageProps> = ({ data }) => {
   return (
     <Layout pageTitle={PAGE_TITLE}>
       {data.allMdx.nodes.map((node: any) => (
         <article key={node.id}>
           <h2>
-            <Link to={`/stories/${node.frontmatter.slug}`}>
+            <Link to={`/personal-life/${node.frontmatter.slug}`}>
               {node.frontmatter.title}
             </Link>
           </h2>
@@ -44,4 +44,4 @@ export const query = graphql`
 
 export const Head: React.FC = () => <Seo title={PAGE_TITLE} />;
 
-export default StoriesPage;
+export default PersonalLifePage;
