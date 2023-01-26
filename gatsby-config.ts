@@ -21,6 +21,12 @@ const config: GatsbyConfig = {
     },
     'gatsby-plugin-mdx',
     'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-plugin-anchor-links',
+      options: {
+        duration: 500,
+      },
+    },
   ],
 };
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { navLinkList } from './Navigation.module.css';
 import { Link } from 'gatsby';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 const Navigation: React.FC = () => {
   return (
@@ -16,7 +17,7 @@ const Navigation: React.FC = () => {
           <Link to="/personal-life">{`// personal life`}</Link>
         </li>
         <li>
-          <Link to="/">{`// contact`}</Link>
+          <AnchorLink to="/#contact" title="contact">{`// contact`}</AnchorLink>
         </li>
       </ul>
     </nav>

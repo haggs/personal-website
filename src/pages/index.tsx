@@ -1,17 +1,27 @@
-import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
-import { container } from './index.module.css';
+import React, { useEffect, useState } from 'react';
+import { container, underConstruction } from './index.module.css';
 import Seo from '../components/Seo/Seo';
 import Layout from '../components/Layout/Layout';
 
 const IndexPage: React.FC = () => {
+  const [text, setText] = useState('Under construction');
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const newText =
+        text === 'Under construction...' ? 'Under construction' : text + '.';
+      setText(newText);
+    }, 500);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [text]);
+
   return (
     <Layout>
       <div className={container}>
-        <p>
-          This is a placeholder for my personal website, more to come, probably.
-        </p>
-        <StaticImage alt="Dan Haggerty" src="../images/profile-pic.jpg" />
+        <p className={underConstruction}>{text}</p>
       </div>
     </Layout>
   );

@@ -1,13 +1,12 @@
 import React from 'react';
 import { container, text } from './Logo.module.css';
-import { Link } from 'gatsby';
 
 const Logo: React.FC = () => {
   return (
     <div className={container}>
-      <Link to="/" className={text}>
+      <a href="/" title="Go home" className={text}>
         DanHaggerty._
-      </Link>
+      </a>
     </div>
   );
 };
