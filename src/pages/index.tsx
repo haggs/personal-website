@@ -17,9 +17,9 @@ const IndexPage: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       const newText =
-        underConstructionText === 'Site under construction...'
-          ? 'Site under construction'
-          : underConstructionText + '.';
+        underConstructionText === 'Site under construction'
+          ? 'Site under construction_'
+          : 'Site under construction';
       setUnderConstructionText(newText);
     }, 500);
 

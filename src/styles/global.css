@@ -1,12 +1,13 @@
 :root {
   --highlighted-link-color: #87cefa;
   --link-hover-color: #4a93c0;
+  --header-footer-padding: 48px;
 }
 
 body {
-  background-color: black;
+  margin: 0;
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Work SansVariable', sans-serif;
   font-size: 1.2rem;
 }
 
@@ -19,8 +20,18 @@ a {
   color: white;
 }
 
+a.highlightedLink {
+  font-weight: 600;
+  color: var(--highlighted-link-color);
+}
+
 a:hover {
   color: var(--link-hover-color);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
 
 h1,

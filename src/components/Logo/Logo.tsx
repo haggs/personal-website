@@ -4,8 +4,12 @@ import classNames from 'classnames';
 
 const Logo: React.FC = () => {
   return (
-    <a href="/" title="Go home" className={classNames(text, 'mono')}>
-      {'DH'}
+    <a
+      href="/"
+      title="Go home"
+      className={classNames(text, 'mono', 'highlightedLink')}
+    >
+      DH._
     </a>
   );
 };

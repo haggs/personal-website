@@ -2,9 +2,8 @@
   max-width: 34rem;
 }
 
-.email {
-  color: var(--highlighted-link-color);
-  font-weight: bold;
+.heading {
+  font-weight: 600;
 }
 
 .socialLinkList {

@@ -1,20 +1,17 @@
 import React from 'react';
-import classnames from 'classnames';
-
-import { container, email, socialLinkList } from './Contact.module.css';
+import { container, heading } from './Contact.module.css';
 
 const Contact: React.FC = () => {
   return (
     <div id="contact" className={container}>
-      <h1>I'm open to work!</h1>
-      <p className="mono">Need help with your app or website? Reach out!</p>
-      <a
-        className={classnames(email, 'mono')}
-        href="mailto:daniel.r.haggerty@gmail.com"
-      >
-        daniel.r.haggerty@gmail.com
+      <h1 className={heading}>Open to Work</h1>
+      <p className="mono">
+        Looking for a frontend or full stack web app developer? Reach out!
+      </p>
+      <a className="mono highlightedLink" href="mailto:dan@dhaggerty.com">
+        dan@dhaggerty.com
       </a>
-      <ul className={classnames(socialLinkList, 'mono')}>
+      <ul className="mono highlightedLink">
         <li>
           <a
             target="_blank"
