@@ -1,32 +1,47 @@
 import React, { useEffect, useState } from 'react';
-import { container, underConstruction } from './index.module.css';
+import classnames from 'classnames';
+import {
+  container,
+  subtitle,
+  title,
+  underConstruction,
+} from './index.module.css';
 import Seo from '../components/Seo/Seo';
 import Layout from '../components/Layout/Layout';
 
 const IndexPage: React.FC = () => {
-  const [text, setText] = useState('Under construction');
+  const [underConstructionText, setUnderConstructionText] =
+    useState('Site under construction');
 
   useEffect(() => {
     const interval = setInterval(() => {
       const newText =
-        text === 'Under construction...' ? 'Under construction' : text + '.';
-      setText(newText);
+        underConstructionText === 'Site under construction...'
+          ? 'Site under construction'
+          : underConstructionText + '.';
+      setUnderConstructionText(newText);
     }, 500);
 
     return () => {
       clearInterval(interval);
     };
-  }, [text]);
+  }, [underConstructionText]);
 
   return (
     <Layout>
       <div className={container}>
-        <p className={underConstruction}>{text}</p>
+        <h1 className={title}>DAN HAGGERTY</h1>
+        <h2 className={classnames(subtitle, 'mono')}>
+          SOFTWARE ENGINEER, FRONTEND DEVELOPER, REGULAR JOE
+        </h2>
+        <p className={classnames(underConstruction, 'mono')}>
+          {underConstructionText}
+        </p>
       </div>
     </Layout>
   );
 };
 
-export const Head: React.FC = () => <Seo title="Home Page" />;
+export const Head: React.FC = () => <Seo title="Home" />;
 
 export default IndexPage;

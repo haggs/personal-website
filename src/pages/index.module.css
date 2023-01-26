@@ -4,8 +4,19 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  padding: 3rem;
+}
+
+.title {
+  font-size: min(10vw, 8rem);
+  margin-bottom: 3rem;
+}
+
+.subtitle {
+  text-align: center;
 }
 
 .underConstruction {
-  width: 180px;
+  margin-top: 3rem;
+  width: 19rem;
 }

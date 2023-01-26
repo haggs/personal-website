@@ -6,7 +6,7 @@ import { container, email, socialLinkList } from './Contact.module.css';
 const Contact: React.FC = () => {
   return (
     <div id="contact" className={container}>
-      <h1>Looking for a new frontend or fullstack engineer role</h1>
+      <h1>I'm open to work!</h1>
       <p className="mono">Need help with your app or website? Reach out!</p>
       <a
         className={classnames(email, 'mono')}

@@ -6,7 +6,7 @@ import Contact from '../Contact/Contact';
 
 const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
-    <div>
+    <div className="page">
       <header className={header}>
         <Logo />
         <Navigation />

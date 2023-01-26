@@ -1,4 +1,9 @@
+.page {
+  position: relative;
+}
+
 .header {
+  position: absolute;
   display: flex;
   padding: 24px;
 }
