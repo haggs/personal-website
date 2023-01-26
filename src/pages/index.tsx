@@ -10,8 +10,9 @@ import Seo from '../components/Seo/Seo';
 import Layout from '../components/Layout/Layout';
 
 const IndexPage: React.FC = () => {
-  const [underConstructionText, setUnderConstructionText] =
-    useState('Site under construction');
+  const [underConstructionText, setUnderConstructionText] = useState(
+    'Site under construction'
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -32,7 +33,7 @@ const IndexPage: React.FC = () => {
       <div className={container}>
         <h1 className={title}>DAN HAGGERTY</h1>
         <h2 className={classnames(subtitle, 'mono')}>
-          SOFTWARE ENGINEER, FRONTEND DEVELOPER, REGULAR JOE
+          FRONT END DEVELOPER, HOME IMPROVEMENT ENTHUSIAST
         </h2>
         <p className={classnames(underConstruction, 'mono')}>
           {underConstructionText}

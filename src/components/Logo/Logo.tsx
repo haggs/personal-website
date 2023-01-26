@@ -1,13 +1,12 @@
 import React from 'react';
-import { container, text } from './Logo.module.css';
+import { text } from './Logo.module.css';
+import classNames from 'classnames';
 
 const Logo: React.FC = () => {
   return (
-    <div className={container}>
-      <a href="/" title="Go home" className={text}>
-        DanHaggerty._
-      </a>
-    </div>
+    <a href="/" title="Go home" className={classNames(text, 'mono')}>
+      {'DH'}
+    </a>
   );
 };
 

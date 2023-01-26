@@ -9,11 +9,13 @@
 
 .title {
   font-size: min(10vw, 8rem);
+  font-weight: bold;
   margin-bottom: 3rem;
 }
 
 .subtitle {
   text-align: center;
+  font-weight: 600;
 }
 
 .underConstruction {

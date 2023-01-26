@@ -3,7 +3,8 @@
 }
 
 .email {
-  color: lightgray;
+  color: var(--highlighted-link-color);
+  font-weight: bold;
 }
 
 .socialLinkList {
