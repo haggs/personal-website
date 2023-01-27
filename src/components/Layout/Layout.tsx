@@ -9,7 +9,7 @@ import {
   sourceCode,
 } from './Layout.module.css';
 import Contact from '../Contact/Contact';
-import Credits from '../Credits/Credits';
+import Credits from '../Copyright/Copyright';
 import ScrollToTopButton from '../ScrollToTopButton/ScrollToTopButton';
 import Logo from '../Logo/Logo';
 import Navigation from '../Navigation/Navigation';
@@ -49,9 +49,7 @@ const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
         </div>
       </footer>
       {showStickyElements && (
-        <span className={scrollToTopButton}>
-          <ScrollToTopButton />
-        </span>
+        <ScrollToTopButton className={scrollToTopButton} />
       )}
     </div>
   );

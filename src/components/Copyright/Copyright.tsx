@@ -1,5 +1,5 @@
 import React from 'react';
-import { container } from './Credits.module.css';
+import { container } from './Copyright.module.css';
 import classNames from 'classnames';
 
 const Credits: React.FC = () => {

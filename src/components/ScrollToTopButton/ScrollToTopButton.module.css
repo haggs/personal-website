@@ -1,0 +1,14 @@
+.button {
+  color: var(--highlighted-link-color);
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 100;
+  background: none;
+  border: none;
+  padding: 0;
+  height: 2rem;
+}
+
+.button:hover {
+  color: var(--link-hover-color);
+}
