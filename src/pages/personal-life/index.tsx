@@ -2,7 +2,7 @@ import * as React from 'react';
 import { container } from './personal-life.module.css';
 import Layout from '../../components/Layout/Layout';
 import Seo from '../../components/Seo/Seo';
-import { Link, graphql } from 'gatsby';
+import { HeadFC, Link, graphql } from 'gatsby';
 
 interface PersonalLifePageProps {
   data: any;
@@ -43,6 +43,6 @@ export const query = graphql`
   }
 `;
 
-export const Head: React.FC = () => <Seo title="Personal Life" />;
+export const Head: HeadFC = () => <Seo title="Personal Life" />;
 
 export default PersonalLifePage;

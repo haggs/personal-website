@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 import Layout from '../../components/Layout/Layout';
 import Seo from '../../components/Seo/Seo';
-import { graphql } from 'gatsby';
+import { HeadFC, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 interface StoryProps {
@@ -41,7 +41,7 @@ export const query = graphql`
   }
 `;
 
-export const Head: React.FC<StoryProps> = ({ data }) => (
+export const Head: HeadFC<StoryProps> = ({ data }) => (
   <Seo title={data.mdx.frontmatter.title} />
 );
 

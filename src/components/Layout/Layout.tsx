@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, PropsWithChildren } from 'react';
 import {
+  credits,
   footer,
   fullNav,
   header,
@@ -7,7 +8,6 @@ import {
   navMenu,
   page,
   scrollToTopButton,
-  sourceCode,
 } from './Layout.module.css';
 import Contact from '../Contact/Contact';
 import Credits from '../Copyright/Copyright';
@@ -18,7 +18,14 @@ import NavigationMenuButton from '../NavigationMenuButton/NavigationMenuButton';
 
 const STICKY_THRESHOLD_PX = 200;
 
-const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
+interface LayoutProps {
+  showContactInfo?: boolean;
+}
+
+const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({
+  showContactInfo = true,
+  children,
+}) => {
   const [showNavigationMenu, setShowNavigationMenu] = useState(false);
   const [showScrollToTopButton, setShowScrollToTopButton] = useState(false);
 
@@ -58,8 +65,8 @@ const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
         <>
           <main>{children}</main>
           <footer className={footer}>
-            <Contact />
-            <div className={sourceCode}>
+            {showContactInfo && <Contact />}
+            <div className={credits}>
               <Credits />
             </div>
           </footer>

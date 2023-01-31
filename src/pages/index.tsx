@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import classnames from 'classnames';
-import {
-  container,
-  subtitle,
-  title,
-  underConstruction,
-} from './index.module.css';
+import { container, subtitle, underConstruction } from './index.module.css';
 import Seo from '../components/Seo/Seo';
 import Layout from '../components/Layout/Layout';
+import { HeadFC } from 'gatsby';
 
 const IndexPage: React.FC = () => {
   const [underConstructionText, setUnderConstructionText] = useState(
@@ -31,7 +27,7 @@ const IndexPage: React.FC = () => {
   return (
     <Layout>
       <div className={container}>
-        <h1 className={title}>DAN HAGGERTY</h1>
+        <h1 className="title">DAN HAGGERTY</h1>
         <h2 className={classnames(subtitle, 'mono')}>
           FRONT END DEVELOPER, HOME IMPROVEMENT ENTHUSIAST
         </h2>
@@ -43,6 +39,6 @@ const IndexPage: React.FC = () => {
   );
 };
 
-export const Head: React.FC = () => <Seo title="Home" />;
+export const Head: HeadFC = () => <Seo title="Home" />;
 
 export default IndexPage;

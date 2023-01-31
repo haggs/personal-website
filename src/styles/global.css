@@ -62,3 +62,9 @@ h6,
 p {
   margin-top: 0;
 }
+
+.title {
+  font-size: min(10vw, 6rem);
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
