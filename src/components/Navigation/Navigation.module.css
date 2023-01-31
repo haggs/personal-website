@@ -1,6 +1,6 @@
 .navLinkList {
   display: flex;
   list-style: none;
-  gap: 1rem;
+  gap: 3rem;
   margin: 0;
 }

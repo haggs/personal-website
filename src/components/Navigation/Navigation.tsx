@@ -9,20 +9,25 @@ const Navigation: React.FC = () => {
     <nav>
       <ul className={classnames(navLinkList, 'mono')}>
         <li>
-          <Link to="/">{`// home`}</Link>
+          <Link to="/">{`Home`}</Link>
         </li>
         <li>
-          <Link to="/">{`// work life`}</Link>
+          <Link to="/">{`Work Life`}</Link>
         </li>
         <li>
-          <Link to="/personal-life">{`// personal life`}</Link>
+          <Link to="/personal-life">{`Personal Life`}</Link>
         </li>
         <li>
           <AnchorLink
             stripHash
             to="#contact"
             title="contact"
-          >{`// contact`}</AnchorLink>
+          >{`Contact`}</AnchorLink>
+        </li>
+        <li>
+          <a className="button" href="/resume.pdf" target="_blank">
+            Resume
+          </a>
         </li>
       </ul>
     </nav>

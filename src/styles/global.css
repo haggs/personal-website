@@ -1,21 +1,32 @@
 :root {
   --highlighted-link-color: #87cefa;
   --link-hover-color: #4a93c0;
-  --header-footer-padding: 48px;
-  --background-color: rgb(10, 37, 48);
+  --header-footer-padding: 36px;
+  --site-background-color: rgb(10, 37, 48);
   --drop-shadow-color: rgb(3, 12, 15);
 }
 
 body {
   margin: 0;
   color: white;
-  background-color: var(--background-color);
+  background-color: var(--site-background-color);
   font-family: 'Work SansVariable', sans-serif;
-  font-size: 1.2rem;
 }
 
 .mono {
   font-family: 'Source Code ProVariable', monospace;
+}
+
+.button {
+  color: var(--highlighted-link-color);
+  border: 1px solid var(--highlighted-link-color);
+  border-radius: 3px;
+  padding: 0.6rem 1rem;
+}
+
+.button:hover {
+  color: var(--highlighted-link-color);
+  background-color: rgb(25 51 67);
 }
 
 a {
