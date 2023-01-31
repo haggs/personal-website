@@ -1,0 +1,27 @@
+.hamburger {
+  padding: 0;
+  background: inherit;
+  box-shadow: none;
+  border: none;
+  z-index: 1;
+}
+
+.hamburger.menuOpen .line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.menuOpen .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.menuOpen .line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.line {
+  width: 25px;
+  height: 2px;
+  background: var(--text-color);
+  margin: 5px;
+  transition: 0.4s;
+}

@@ -13,6 +13,34 @@
   padding: var(--header-footer-padding);
 }
 
+.fullNav,
+.navMenuButton {
+  display: none;
+}
+
+.navMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .fullNav {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .navMenuButton {
+    display: block;
+  }
+}
+
 .footer {
   padding: var(--header-footer-padding);
   display: flex;

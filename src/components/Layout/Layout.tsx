@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import {
   footer,
+  fullNav,
   header,
+  navMenuButton,
+  navMenu,
   page,
   scrollToTopButton,
   sourceCode,
@@ -11,11 +14,18 @@ import Credits from '../Copyright/Copyright';
 import ScrollToTopButton from '../ScrollToTopButton/ScrollToTopButton';
 import Logo from '../Logo/Logo';
 import Navigation from '../Navigation/Navigation';
+import NavigationMenuButton from '../NavigationMenuButton/NavigationMenuButton';
 
 const STICKY_THRESHOLD_PX = 200;
 
 const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
+  const [showNavigationMenu, setShowNavigationMenu] = useState(false);
   const [showScrollToTopButton, setShowScrollToTopButton] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleScroll = () => {
     const scrollTopPositionPx =
@@ -23,28 +33,40 @@ const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
     setShowScrollToTopButton(scrollTopPositionPx > STICKY_THRESHOLD_PX);
   };
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const toggleOpenNavigationMenu = () => {
+    setShowNavigationMenu(!showNavigationMenu);
+  };
 
   return (
     <div className={page}>
       <header className={header}>
-        <div>
-          <Logo />
-        </div>
-        <Navigation />
+        <Logo />
+        <Navigation className={fullNav} />
+        <NavigationMenuButton
+          open={showNavigationMenu}
+          onClick={toggleOpenNavigationMenu}
+          className={navMenuButton}
+        />
       </header>
-      <main>{children}</main>
-      <footer className={footer}>
-        <Contact />
-        <div className={sourceCode}>
-          <Credits />
-        </div>
-      </footer>
-      {showScrollToTopButton && (
-        <ScrollToTopButton className={scrollToTopButton} />
+      {showNavigationMenu ? (
+        <Navigation
+          className={navMenu}
+          stacked
+          onNavigate={toggleOpenNavigationMenu}
+        />
+      ) : (
+        <>
+          <main>{children}</main>
+          <footer className={footer}>
+            <Contact />
+            <div className={sourceCode}>
+              <Credits />
+            </div>
+          </footer>
+          {showScrollToTopButton && (
+            <ScrollToTopButton className={scrollToTopButton} />
+          )}
+        </>
       )}
     </div>
   );

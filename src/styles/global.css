@@ -4,11 +4,12 @@
   --header-footer-padding: 36px;
   --site-background-color: rgb(10, 37, 48);
   --drop-shadow-color: rgb(3, 12, 15);
+  --text-color: white;
 }
 
 body {
   margin: 0;
-  color: white;
+  color: var(--text-color);
   background-color: var(--site-background-color);
   font-family: 'Work SansVariable', sans-serif;
 }
@@ -48,7 +49,7 @@ ul {
   padding: 0;
 }
 
-ul > li {
+ul li {
   margin-bottom: 0.5rem;
 }
 
