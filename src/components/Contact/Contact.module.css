@@ -1,16 +1,3 @@
 .container {
   max-width: 34rem;
 }
-
-.heading {
-  font-weight: 600;
-}
-
-.socialLinkList {
-  list-style: none;
-  padding: 0;
-}
-
-.socialLinkList > li {
-  margin-bottom: 8px;
-}

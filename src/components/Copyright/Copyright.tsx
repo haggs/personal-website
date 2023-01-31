@@ -27,10 +27,7 @@ const Credits: React.FC = () => {
           Github
         </a>
       </p>
-      <span>
-        © {new Date().getFullYear()}. Made just for fun by Dan Haggerty. All
-        rights reserved.
-      </span>
+      <span>© {new Date().getFullYear()} Dan Haggerty</span>
     </div>
   );
 };

@@ -48,6 +48,10 @@ ul {
   padding: 0;
 }
 
+ul > li {
+  margin-bottom: 0.5rem;
+}
+
 h1,
 h2,
 h3,
