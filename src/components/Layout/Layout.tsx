@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import {
   footer,
   header,
-  headerSticky,
-  main,
   page,
   scrollToTopButton,
   sourceCode,
@@ -13,17 +11,16 @@ import Credits from '../Copyright/Copyright';
 import ScrollToTopButton from '../ScrollToTopButton/ScrollToTopButton';
 import Logo from '../Logo/Logo';
 import Navigation from '../Navigation/Navigation';
-import classNames from 'classnames';
 
 const STICKY_THRESHOLD_PX = 200;
 
 const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const [showStickyElements, setShowStickyElements] = useState(false);
+  const [showScrollToTopButton, setShowScrollToTopButton] = useState(false);
 
   const handleScroll = () => {
     const scrollTopPositionPx =
       document.body.scrollTop || document.documentElement.scrollTop;
-    setShowStickyElements(scrollTopPositionPx >= STICKY_THRESHOLD_PX);
+    setShowScrollToTopButton(scrollTopPositionPx > STICKY_THRESHOLD_PX);
   };
 
   useEffect(() => {
@@ -31,24 +28,22 @@ const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const headerClasses = classNames(header, {
-    [headerSticky]: showStickyElements,
-  });
-
   return (
     <div className={page}>
-      <header className={headerClasses}>
-        <Logo />
+      <header className={header}>
+        <div>
+          <Logo />
+        </div>
         <Navigation />
       </header>
-      <main className={main}>{children}</main>
+      <main>{children}</main>
       <footer className={footer}>
         <Contact />
         <div className={sourceCode}>
           <Credits />
         </div>
       </footer>
-      {showStickyElements && (
+      {showScrollToTopButton && (
         <ScrollToTopButton className={scrollToTopButton} />
       )}
     </div>

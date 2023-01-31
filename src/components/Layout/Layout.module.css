@@ -1,30 +1,20 @@
 .page {
   position: relative;
-  overflow-x: hidden;
-}
-
-.main {
-  background-color: rgb(10, 37, 48);
 }
 
 .header {
-  display: flex;
-  padding: var(--header-footer-padding);
-  align-items: center;
-  width: 100%;
-  gap: var(--header-footer-padding);
   position: absolute;
-}
-
-.headerSticky {
-  position: fixed;
-  padding: 10px var(--header-footer-padding);
-  background-color: rgba(0, 0, 0, 0.725);
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--header-footer-padding);
 }
 
 .footer {
   padding: var(--header-footer-padding);
-  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;

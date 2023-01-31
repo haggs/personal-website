@@ -2,11 +2,14 @@
   --highlighted-link-color: #87cefa;
   --link-hover-color: #4a93c0;
   --header-footer-padding: 48px;
+  --background-color: rgb(10, 37, 48);
+  --drop-shadow-color: rgb(3, 12, 15);
 }
 
 body {
   margin: 0;
   color: white;
+  background-color: var(--background-color);
   font-family: 'Work SansVariable', sans-serif;
   font-size: 1.2rem;
 }
