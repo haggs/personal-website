@@ -1,10 +1,10 @@
 :root {
-  /* Colors */
-  --color-1: #deddd1;
-  --color-2: #89c9ce;
-  --color-3: #507883;
-  --color-4: #51a9bf;
-  --color-5: #182727;
+  /* Colors chosen using http://colormind.io/bootstrap/ */
+  --color-1: #f8f9f7; /* light shades */
+  --color-2: #b18b87; /* light accent */
+  --color-3: #cc4250; /* main brand color */
+  --color-4: #db7965; /* dark accent */
+  --color-5: #262e3b; /* dark shades */
   --drop-shadow-color: var(--color-5);
 
   /* Padding */
@@ -21,18 +21,17 @@
 
 /* Light Mode */
 :root {
-  --text-color: var(--color-4);
+  --text-color: var(--color-5);
   --site-background-color: var(--color-1);
-  --link-color: var(--color-3);
-  --link-color-hover: var(--color-5);
+  --link-color: var(--color-2);
+  --link-color-hover: var(--text-color);
 }
 
 /* Dark Mode */
 :root.dark {
   --text-color: var(--color-1);
   --site-background-color: var(--color-5);
-  --link-color: var(--color-2);
-  --link-color-hover: var(--color-1);
+  --link-color: var(--color-4);
 }
 
 /* Element styles */
@@ -54,32 +53,32 @@ a {
   text-decoration: none;
   font-weight: 600;
   color: var(--link-color);
-}
-
-a,
-button {
-  color: var(--link-color);
   transition: color var(--animation-duration);
 }
 
-a:hover,
-button:hover {
+a:hover {
   color: var(--link-color-hover);
 }
 
-button,
-a.button {
+button:not(.icon),
+a.button:not(.icon) {
+  color: var(--link-color);
   border: 1px solid var(--link-color);
   border-radius: 3px;
   padding: 0.6rem 1rem;
+  transition: color var(--animation-duration);
+  transition: background-color var(--animation-duration);
 }
 
-button:hover,
-a.button:hover {
-  background-color: var(--color-2);
+button:not(.icon):hover,
+a.button:not(.icon):hover {
+  color: var(--site-background-color);
+  background-color: var(--text-color);
+  border: 1px solid var(--text-color);
 }
 
 .icon {
+  color: var(--link-color);
   font-size: var(--icon-button-default-height);
   line-height: var(--icon-button-default-height);
   background: none;
@@ -88,10 +87,20 @@ a.button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: color var(--animation-duration);
 }
 
 .icon:hover {
-  background: none;
+  color: var(--link-color-hover);
+}
+
+.icon.hover-fill svg {
+  fill: none;
+  transition: fill var(--animation-duration);
+}
+
+.icon.hover-fill:hover svg {
+  fill: var(--link-color-hover);
 }
 
 ul {

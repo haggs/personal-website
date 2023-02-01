@@ -22,11 +22,15 @@ const DarkModeToggle: React.FC = () => {
 
   return (
     <button
-      className={classnames(toggle, 'icon')}
+      className={classnames(toggle, 'icon', 'hover-fill')}
       onClick={handleToggleDarkMode}
       aria-label={`Turn ${checked ? 'off' : 'on'} dark mode`}
     >
-      {checked ? <FiMoon /> : <FiSun />}
+      {checked ? (
+        <FiMoon className="hover-fill" />
+      ) : (
+        <FiSun className="hover-fill" />
+      )}
     </button>
   );
 };
