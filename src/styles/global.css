@@ -1,47 +1,56 @@
 :root {
-  --highlighted-link-color: #87cefa;
-  --link-hover-color: #4a93c0;
+  /* Colors */
+  --color-1: #DEDDD1;
+  --color-2: #89C9CE;
+  --color-3: #507883;
+  --color-4: #51A9BF;
+  --color-5: #182727;
+  --text-color: var(--color-4);
+  --site-background-color: var(--color-1);
+  --drop-shadow-color: var(--color-5);
+  --link-color: var(--color-3);
+  --link-color-hover: var(--color-5);
+
+  /* Padding */
   --header-footer-padding: 36px;
-  --site-background-color: rgb(10, 37, 48);
-  --drop-shadow-color: rgb(3, 12, 15);
-  --text-color: white;
+
+  /* Font */
+  --font-primary: 'Work SansVariable', sans-serif;
+  --font-mono: 'Source Code ProVariable', monospace;
 }
 
 body {
   margin: 0;
   color: var(--text-color);
   background-color: var(--site-background-color);
-  font-family: 'Work SansVariable', sans-serif;
+  font-family: var(--font-primary);
 }
 
 .mono {
-  font-family: 'Source Code ProVariable', monospace;
-}
-
-.button {
-  color: var(--highlighted-link-color);
-  border: 1px solid var(--highlighted-link-color);
-  border-radius: 3px;
-  padding: 0.6rem 1rem;
-}
-
-.button:hover {
-  color: var(--highlighted-link-color);
-  background-color: rgb(25 51 67);
+  font-family: var(--font-mono);
 }
 
 a {
   text-decoration: none;
-  color: white;
-}
-
-a.highlightedLink {
   font-weight: 600;
-  color: var(--highlighted-link-color);
+  color: var(--link-color);
 }
 
-a:hover {
-  color: var(--link-hover-color);
+a,
+button {
+  color: var(--link-color);
+}
+
+a:hover,
+button:hover {
+  color: var(--link-color-hover);
+  background-color: var(--color-2);
+}
+
+.button {
+  border: 1px solid var(--link-color);
+  border-radius: 3px;
+  padding: 0.6rem 1rem;
 }
 
 ul {
