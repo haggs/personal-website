@@ -1,9 +1,9 @@
 .hamburger {
-  padding: 0;
-  background: inherit;
-  box-shadow: none;
-  border: none;
   z-index: 1;
+}
+
+.hamburger:hover .line {
+  background: var(--link-color-hover);
 }
 
 .hamburger.menuOpen .line:nth-child(1) {
@@ -21,7 +21,7 @@
 .line {
   width: 25px;
   height: 2px;
-  background: var(--text-color);
+  background: var(--link-color);
   margin: 5px;
-  transition: 0.4s;
+  transition: var(--animation-duration);
 }

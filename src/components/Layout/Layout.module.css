@@ -13,6 +13,11 @@
   padding: var(--header-footer-padding);
 }
 
+.headerRight {
+  display: flex;
+  align-items: center;
+}
+
 .fullNav,
 .navMenuButton {
   display: none;
@@ -29,15 +34,17 @@
   justify-content: center;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 901px) {
   .fullNav {
-    display: block;
+    display: inline-block;
+    margin-right: 2rem;
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 900px) {
   .navMenuButton {
-    display: block;
+    display: inline-block;
+    margin-right: 1rem;
   }
 }
 

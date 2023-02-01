@@ -5,6 +5,10 @@
   margin: 0;
 }
 
+.linkList li {
+  margin-bottom: 0;
+}
+
 .linkList.stackedList {
   flex-direction: column;
   gap: 2rem;

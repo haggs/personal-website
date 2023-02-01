@@ -1,10 +1,10 @@
 import React from 'react';
 import { container } from './Copyright.module.css';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 const Credits: React.FC = () => {
   return (
-    <div className={classNames(container, 'mono')}>
+    <div className={classnames(container, 'mono')}>
       <span>
         This site was built using{' '}
         <a

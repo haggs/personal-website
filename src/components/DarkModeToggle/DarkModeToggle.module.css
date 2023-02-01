@@ -1,0 +1,6 @@
+.toggle {
+  --icon-size: 1.5rem;
+  z-index: 1;
+  font-size: var(--icon-size);
+  line-height: var(--icon-size);
+}

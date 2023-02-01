@@ -1,7 +1,6 @@
 import React from 'react';
-import { button } from './ScrollToTopButton.module.css';
-import { MdArrowUpward } from '@react-icons/all-files/md/MdArrowUpward';
-import classNames from 'classnames';
+import { FiArrowUp } from '@react-icons/all-files/fi/FiArrowUp';
+import classnames from 'classnames';
 
 interface ScrollToTopButtonProps {
   className?: string;
@@ -17,11 +16,11 @@ const ScrollToTopButton: React.FC<ScrollToTopButtonProps> = ({ className }) => {
 
   return (
     <button
-      className={classNames(className, button)}
+      className={classnames('icon', className)}
       aria-label="Scroll to Top"
       onClick={scrollToTop}
     >
-      <MdArrowUpward />
+      <FiArrowUp />
     </button>
   );
 };

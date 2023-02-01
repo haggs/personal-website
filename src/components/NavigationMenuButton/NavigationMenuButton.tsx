@@ -1,6 +1,6 @@
 import React from 'react';
 import { hamburger, line, menuOpen } from './NavigationMenuButton.module.css';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 interface NavigationMenuProps {
   open: boolean;
@@ -10,15 +10,19 @@ interface NavigationMenuProps {
 
 const NavigationMenuButton: React.FC<NavigationMenuProps> = ({
   open,
-  onClick: onOpen,
+  onClick,
   className,
 }) => {
-  const hamburgerClasses = classNames(className, hamburger, {
+  const hamburgerClasses = classnames(className, hamburger, 'icon', {
     [menuOpen]: open,
   });
 
   return (
-    <button className={hamburgerClasses} onClick={onOpen}>
+    <button
+      className={hamburgerClasses}
+      onClick={onClick}
+      aria-label={`${open ? 'Close' : 'Open'} menu`}
+    >
       <div className={line}></div>
       <div className={line}></div>
       <div className={line}></div>

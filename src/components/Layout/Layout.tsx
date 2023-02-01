@@ -4,6 +4,7 @@ import {
   footer,
   fullNav,
   header,
+  headerRight,
   navMenuButton,
   navMenu,
   page,
@@ -15,8 +16,10 @@ import ScrollToTopButton from '../ScrollToTopButton/ScrollToTopButton';
 import Logo from '../Logo/Logo';
 import Navigation from '../Navigation/Navigation';
 import NavigationMenuButton from '../NavigationMenuButton/NavigationMenuButton';
+import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
 
 const STICKY_THRESHOLD_PX = 200;
+const MOBILE_BREAKPOINT = 900;
 
 interface LayoutProps {
   showContactInfo?: boolean;
@@ -34,10 +37,21 @@ const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const handleScroll = () => {
     const scrollTopPositionPx =
       document.body.scrollTop || document.documentElement.scrollTop;
     setShowScrollToTopButton(scrollTopPositionPx > STICKY_THRESHOLD_PX);
+  };
+
+  const handleResize = () => {
+    if (window.innerWidth > MOBILE_BREAKPOINT) {
+      setShowNavigationMenu(false);
+    }
   };
 
   const toggleOpenNavigationMenu = () => {
@@ -48,12 +62,15 @@ const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({
     <div className={page}>
       <header className={header}>
         <Logo />
-        <Navigation className={fullNav} />
-        <NavigationMenuButton
-          open={showNavigationMenu}
-          onClick={toggleOpenNavigationMenu}
-          className={navMenuButton}
-        />
+        <div className={headerRight}>
+          <Navigation className={fullNav} />
+          <NavigationMenuButton
+            open={showNavigationMenu}
+            onClick={toggleOpenNavigationMenu}
+            className={navMenuButton}
+          />
+          <DarkModeToggle />
+        </div>
       </header>
       {showNavigationMenu ? (
         <Navigation
