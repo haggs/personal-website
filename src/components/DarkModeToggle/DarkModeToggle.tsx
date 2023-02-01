@@ -5,7 +5,12 @@ import classnames from 'classnames';
 import { toggle } from './DarkModeToggle.module.css';
 
 const DarkModeToggle: React.FC = () => {
-  const [checked, setChecked] = useState(window.__theme === 'dark');
+  let windowDarkModeSet = false;
+  if (typeof window !== 'undefined') {
+    windowDarkModeSet = window.__theme === 'dark';
+  }
+
+  const [checked, setChecked] = useState(windowDarkModeSet);
 
   const handleToggleDarkMode = () => {
     const newValue = !checked;
