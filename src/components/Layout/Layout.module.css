@@ -19,6 +19,28 @@
   z-index: 1000;
 }
 
+.logoAndSkipLink {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.skipLink {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: 8px;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.skipLink:focus {
+  clip: auto;
+  opacity: 1;
+  top: 0;
+}
+
 .fullNav,
 .navMenuButton {
   display: none;

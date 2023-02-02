@@ -1,7 +1,7 @@
 import React, { useEffect, useState, PropsWithChildren } from 'react';
 import * as styles from './Layout.module.css';
 import Contact from '../Contact/Contact';
-import Credits from '../Copyright/Copyright';
+import Credits from '../Credits/Credits';
 import ScrollToTopButton from '../ScrollToTopButton/ScrollToTopButton';
 import Logo from '../Logo/Logo';
 import Navigation from '../Navigation/Navigation';
@@ -46,7 +46,14 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <Logo />
+        <div className={styles.logoAndSkipLink}>
+          <a
+            className={styles.skipLink}
+            href="#main"
+            title="Skip to main content"
+          >{`Skip to content`}</a>
+          <Logo />
+        </div>
         <Navigation className={styles.fullNav} />
         <NavigationMenuButton
           open={showNavigationMenu}
@@ -63,7 +70,9 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
         />
       ) : (
         <>
-          <main className={styles.main}>{children}</main>
+          <main id="main" className={styles.main}>
+            {children}
+          </main>
           <footer className={styles.footer}>
             <section className={styles.contact}>
               <Contact />

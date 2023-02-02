@@ -1,6 +1,6 @@
 .intro {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-rows:  
 }
 
 .introText {
@@ -14,8 +14,7 @@
 .introPhoto {
   flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  place-items: center;
 }
 
 .profilePic {
@@ -27,9 +26,4 @@
 .subtitle {
   text-align: center;
   font-weight: 600;
-}
-
-.underConstruction {
-  margin-top: 3rem;
-  width: 19rem;
 }

@@ -5,26 +5,9 @@ import Seo from '../components/Seo/Seo';
 import Layout from '../components/Layout/Layout';
 import { HeadFC } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
+import UnderConstructionMessage from '../components/UnderConstructionMessage/UnderConstructionMessage';
 
 const IndexPage: React.FC = () => {
-  const [underConstructionText, setUnderConstructionText] = useState(
-    'Site under construction'
-  );
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const newText =
-        underConstructionText === 'Site under construction'
-          ? 'Site under construction_'
-          : 'Site under construction';
-      setUnderConstructionText(newText);
-    }, 500);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, [underConstructionText]);
-
   return (
     <Layout>
       <section className={styles.intro}>
@@ -33,9 +16,7 @@ const IndexPage: React.FC = () => {
           <h2 className={classnames(styles.subtitle, 'mono')}>
             FRONT END DEVELOPER, HOME IMPROVEMENT ENTHUSIAST
           </h2>
-          <p className={classnames(styles.underConstruction, 'mono')}>
-            {underConstructionText}
-          </p>
+          <UnderConstructionMessage />
         </div>
         <div className={styles.introPhoto}>
           <StaticImage
@@ -47,16 +28,7 @@ const IndexPage: React.FC = () => {
       </section>
       <section id="work-life">
         <h2>Work Experience</h2>
-        <ul>
-          <li>Job 1</li>
-          <li>Job 2</li>
-          <li>Job 3</li>
-          <li>Job 4</li>
-          <li>Job 5</li>
-          <li>Job 6</li>
-          <li>Job 7</li>
-          <li>Job 8</li>
-        </ul>
+        <UnderConstructionMessage />
       </section>
     </Layout>
   );
