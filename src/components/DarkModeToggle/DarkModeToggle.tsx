@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 import { FiSun } from '@react-icons/all-files/fi/FiSun';
 import { FiMoon } from '@react-icons/all-files/fi/FiMoon';
 import classnames from 'classnames';
-import { toggle } from './DarkModeToggle.module.css';
+import * as styles from './DarkModeToggle.module.css';
 
-const DarkModeToggle: React.FC = () => {
+interface DarkModeToggleProps {
+  className?: string;
+}
+
+const DarkModeToggle: React.FC<DarkModeToggleProps> = ({ className }) => {
   let windowDarkModeSet = false;
   if (typeof window !== 'undefined') {
     windowDarkModeSet = window.__theme === 'dark';
@@ -27,7 +31,7 @@ const DarkModeToggle: React.FC = () => {
 
   return (
     <button
-      className={classnames(toggle, 'icon', 'hover-fill')}
+      className={classnames(className, styles.toggle, 'icon', 'hover-fill')}
       onClick={handleToggleDarkMode}
       aria-label={`Turn ${checked ? 'off' : 'on'} dark mode`}
     >

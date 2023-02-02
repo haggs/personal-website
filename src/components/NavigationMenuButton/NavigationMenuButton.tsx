@@ -1,5 +1,5 @@
 import React from 'react';
-import { hamburger, line, menuOpen } from './NavigationMenuButton.module.css';
+import * as styles from './NavigationMenuButton.module.css';
 import classnames from 'classnames';
 
 interface NavigationMenuProps {
@@ -13,8 +13,8 @@ const NavigationMenuButton: React.FC<NavigationMenuProps> = ({
   onClick,
   className,
 }) => {
-  const hamburgerClasses = classnames(className, hamburger, 'icon', {
-    [menuOpen]: open,
+  const hamburgerClasses = classnames(className, styles.hamburger, 'icon', {
+    [styles.menuOpen]: open,
   });
 
   return (
@@ -23,9 +23,9 @@ const NavigationMenuButton: React.FC<NavigationMenuProps> = ({
       onClick={onClick}
       aria-label={`${open ? 'Close' : 'Open'} menu`}
     >
-      <div className={line}></div>
-      <div className={line}></div>
-      <div className={line}></div>
+      <div className={styles.line}></div>
+      <div className={styles.line}></div>
+      <div className={styles.line}></div>
     </button>
   );
 };

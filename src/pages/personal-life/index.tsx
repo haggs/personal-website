@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { container } from './personal-life.module.css';
+import * as styles from './personal-life.module.css';
 import Layout from '../../components/Layout/Layout';
 import Seo from '../../components/Seo/Seo';
 import { HeadFC, Link, graphql } from 'gatsby';
@@ -11,7 +11,7 @@ interface PersonalLifePageProps {
 const PersonalLifePage: React.FC<PersonalLifePageProps> = ({ data }) => {
   return (
     <Layout>
-      <div className={container}>
+      <div className={styles.container}>
         {data.allMdx.nodes.map((node: any) => (
           <article key={node.id}>
             <h2>

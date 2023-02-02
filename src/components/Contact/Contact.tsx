@@ -1,9 +1,9 @@
 import React from 'react';
-import { container } from './Contact.module.css';
+import * as styles from './Contact.module.css';
 
 const Contact: React.FC = () => {
   return (
-    <div id="contact" className={container}>
+    <div id="contact" className={styles.container}>
       <h1>Open to Work</h1>
       <p className="mono">
         Looking for a frontend or full stack web app developer? Reach out!

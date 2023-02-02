@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import { linkList, stackedList } from './Navigation.module.css';
+import * as styles from './Navigation.module.css';
 import { Link } from 'gatsby';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
@@ -15,8 +15,8 @@ const Navigation: React.FC<NavigationProps> = ({
   stacked = false,
   className,
 }) => {
-  const navLinkListStyles = classnames(linkList, 'mono', {
-    [stackedList]: stacked,
+  const navLinkListStyles = classnames(styles.linkList, 'mono', {
+    [styles.stackedList]: stacked,
   });
 
   /**

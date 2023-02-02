@@ -1,5 +1,5 @@
 import React from 'react';
-import { text } from './Logo.module.css';
+import * as styles from './Logo.module.css';
 import classnames from 'classnames';
 
 const Logo: React.FC = () => {
@@ -7,7 +7,7 @@ const Logo: React.FC = () => {
     <a
       href="/"
       title="Go home"
-      className={classnames(text, 'mono', 'highlightedLink')}
+      className={classnames(styles.text, 'mono', 'highlightedLink')}
     >
       DH._
     </a>

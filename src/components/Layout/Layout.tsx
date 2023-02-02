@@ -1,15 +1,5 @@
 import React, { useEffect, useState, PropsWithChildren } from 'react';
-import {
-  credits,
-  footer,
-  fullNav,
-  header,
-  headerRight,
-  navMenuButton,
-  navMenu,
-  page,
-  scrollToTopButton,
-} from './Layout.module.css';
+import * as styles from './Layout.module.css';
 import Contact from '../Contact/Contact';
 import Credits from '../Copyright/Copyright';
 import ScrollToTopButton from '../ScrollToTopButton/ScrollToTopButton';
@@ -59,36 +49,34 @@ const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({
   };
 
   return (
-    <div className={page}>
-      <header className={header}>
+    <div className={styles.page}>
+      <header className={styles.header}>
         <Logo />
-        <div className={headerRight}>
-          <Navigation className={fullNav} />
-          <NavigationMenuButton
-            open={showNavigationMenu}
-            onClick={toggleOpenNavigationMenu}
-            className={navMenuButton}
-          />
-          <DarkModeToggle />
-        </div>
+        <Navigation className={styles.fullNav} />
+        <NavigationMenuButton
+          open={showNavigationMenu}
+          onClick={toggleOpenNavigationMenu}
+          className={styles.navMenuButton}
+        />
+        <DarkModeToggle className={styles.darkModeToggle} />
       </header>
       {showNavigationMenu ? (
         <Navigation
-          className={navMenu}
+          className={styles.navMenu}
           stacked
           onNavigate={toggleOpenNavigationMenu}
         />
       ) : (
         <>
-          <main>{children}</main>
-          <footer className={footer}>
+          <main className={styles.main}>{children}</main>
+          <footer className={styles.footer}>
             {showContactInfo && <Contact />}
-            <div className={credits}>
+            <div className={styles.credits}>
               <Credits />
             </div>
           </footer>
           {showScrollToTopButton && (
-            <ScrollToTopButton className={scrollToTopButton} />
+            <ScrollToTopButton className={styles.scrollToTopButton} />
           )}
         </>
       )}
