@@ -9,16 +9,11 @@ import NavigationMenuButton from '../NavigationMenuButton/NavigationMenuButton';
 import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
 
 const STICKY_THRESHOLD_PX = 200;
+
+// This should be kept in sync the breakpoints in Layout.modules.css
 const MOBILE_BREAKPOINT = 900;
 
-interface LayoutProps {
-  showContactInfo?: boolean;
-}
-
-const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({
-  showContactInfo = true,
-  children,
-}) => {
+const Layout: React.FC<PropsWithChildren> = ({ children }) => {
   const [showNavigationMenu, setShowNavigationMenu] = useState(false);
   const [showScrollToTopButton, setShowScrollToTopButton] = useState(false);
 
@@ -70,10 +65,10 @@ const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({
         <>
           <main className={styles.main}>{children}</main>
           <footer className={styles.footer}>
-            {showContactInfo && <Contact />}
-            <div className={styles.credits}>
-              <Credits />
-            </div>
+            <section className={styles.contact}>
+              <Contact />
+            </section>
+            <Credits />
           </footer>
           {showScrollToTopButton && (
             <ScrollToTopButton className={styles.scrollToTopButton} />

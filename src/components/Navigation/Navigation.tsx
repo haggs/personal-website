@@ -37,7 +37,12 @@ const Navigation: React.FC<NavigationProps> = ({
           <Link to="/" onClick={delayOnClick}>{`Home`}</Link>
         </li>
         <li>
-          <Link to="/" onClick={delayOnClick}>{`Work Life`}</Link>
+          <AnchorLink
+            stripHash
+            to="/#work-life"
+            title="Work Life"
+            onAnchorLinkClick={onNavigate}
+          >{`Work Life`}</AnchorLink>
         </li>
         <li>
           <Link
@@ -48,7 +53,7 @@ const Navigation: React.FC<NavigationProps> = ({
         <li>
           <AnchorLink
             stripHash
-            to="#contact"
+            to="/#contact"
             title="contact"
             onAnchorLinkClick={onNavigate}
           >{`Contact`}</AnchorLink>

@@ -45,7 +45,7 @@ const IndexPage: React.FC = () => {
           />
         </div>
       </section>
-      <section>
+      <section id="work-life">
         <h2>Work Experience</h2>
         <ul>
           <li>Job 1</li>

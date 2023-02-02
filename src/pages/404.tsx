@@ -5,7 +5,7 @@ import Layout from '../components/Layout/Layout';
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
-    <Layout showContactInfo={false}>
+    <Layout>
       <div className={styles.container}>
         <h1 className="title">404</h1>
         <p className="mono">
