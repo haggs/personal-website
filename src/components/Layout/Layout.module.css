@@ -32,7 +32,7 @@
   padding: 8px;
   z-index: 1;
   opacity: 1;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity var(--animation-duration) ease-in-out;
 }
 
 .skipLink:focus {
@@ -55,7 +55,8 @@
   right: 0;
   bottom: 0;
   display: flex;
-  place-items: center;
+  align-items: center;
+  justify-content: center;
 }
 
 @media only screen and (min-width: 901px) {

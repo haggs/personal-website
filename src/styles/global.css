@@ -22,6 +22,8 @@
   --site-background-color: var(--color-1);
   --link-color: var(--color-2);
   --link-color-hover: var(--text-color);
+  --icon-color: var(--color-4);
+  --icon-color-hover: var(--text-color);
 }
 
 /* Dark Mode */
@@ -29,6 +31,7 @@
   --text-color: var(--color-1);
   --site-background-color: var(--color-5);
   --link-color: var(--color-4);
+  --icon-color: var(--color-3);
 }
 
 /* Element styles */
@@ -38,7 +41,13 @@ body {
   background-color: var(--site-background-color);
   margin: 0;
   font-family: var(--font-primary);
-  transition: all var(--animation-duration);
+}
+
+body,
+a,
+button {
+  transition: color var(--animation-duration),
+    background-color var(--animation-duration);
 }
 
 section {
@@ -53,7 +62,6 @@ a {
   text-decoration: none;
   font-weight: 600;
   color: var(--link-color);
-  transition: color var(--animation-duration);
 }
 
 a:hover {
@@ -66,8 +74,6 @@ a.button:not(.icon) {
   border: 1px solid var(--link-color);
   border-radius: 3px;
   padding: 0.6rem 1rem;
-  transition: color var(--animation-duration);
-  transition: background-color var(--animation-duration);
 }
 
 button:not(.icon):hover,
@@ -78,28 +84,28 @@ a.button:not(.icon):hover {
 }
 
 .icon {
-  color: var(--link-color);
+  color: var(--icon-color);
   font-size: var(--icon-button-default-height);
   line-height: var(--icon-button-default-height);
   background: none;
   border: none;
   padding: 0;
   display: flex;
-  place-items: center;
-  transition: color var(--animation-duration);
+  align-items: center;
+  justify-content: center;
 }
 
 .icon:hover {
-  color: var(--link-color-hover);
+  color: var(--icon-color-hover);
 }
 
 .icon.hover-fill svg {
-  fill: none;
+  fill: transparent;
   transition: fill var(--animation-duration);
 }
 
 .icon.hover-fill:hover svg {
-  fill: var(--link-color-hover);
+  fill: var(--icon-color-hover);
 }
 
 ul {
@@ -119,16 +125,4 @@ h5,
 h6,
 p {
   margin-top: 0;
-}
-
-.title {
-  font-size: min(10vw, 6rem);
-  font-weight: 600;
-  margin-bottom: 3rem;
-}
-
-.test {
-  background-color: salmon;
-  height: 800px;
-  width: 800px;
 }

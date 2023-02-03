@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import classnames from 'classnames';
+import React from 'react';
 import * as styles from './index.module.css';
 import Seo from '../components/Seo/Seo';
 import Layout from '../components/Layout/Layout';
@@ -12,15 +11,15 @@ const IndexPage: React.FC = () => {
     <Layout>
       <section className={styles.intro}>
         <div className={styles.introText}>
-          <h1 className="title">DAN HAGGERTY</h1>
-          <h2 className={classnames(styles.subtitle, 'mono')}>
+          <h1 className={styles.title}>DAN HAGGERTY</h1>
+          <h2 className="mono">
             FRONT END DEVELOPER, HOME IMPROVEMENT ENTHUSIAST
           </h2>
           <UnderConstructionMessage />
         </div>
-        <div className={styles.introPhoto}>
+        <div className={styles.profilePhotoContainer}>
           <StaticImage
-            className={styles.profilePic}
+            className={styles.profilePhoto}
             src="../images/profile-pic.jpg"
             alt="Dan Haggerty smiling wearing sunglasses"
           />

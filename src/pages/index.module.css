@@ -1,29 +1,31 @@
 .intro {
-  display: grid;
-  grid-template-rows:  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
 }
 
 .introText {
-  min-height: 100vh;
   flex: 1;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
-.introPhoto {
-  flex: 1;
+.title {
+  font-size: min(10vw, 6rem);
+}
+
+.profilePhotoContainer {
   display: flex;
-  place-items: center;
+  align-items: center;
+  justify-content: center;
 }
 
-.profilePic {
-  width: 30rem;
-  max-width: 30rem;
+.profilePhoto {
+  width: min(400px, 60vw);
   border-radius: 50%;
-}
-
-.subtitle {
-  text-align: center;
-  font-weight: 600;
 }

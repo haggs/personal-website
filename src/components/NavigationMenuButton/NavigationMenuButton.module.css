@@ -23,5 +23,4 @@
   height: 2px;
   background: var(--link-color);
   margin: 5px;
-  transition: var(--animation-duration);
 }

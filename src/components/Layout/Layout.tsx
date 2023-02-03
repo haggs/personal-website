@@ -74,9 +74,7 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
             {children}
           </main>
           <footer className={styles.footer}>
-            <section className={styles.contact}>
-              <Contact />
-            </section>
+            <Contact className={styles.contact} />
             <Credits />
           </footer>
           {showScrollToTopButton && (

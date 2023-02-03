@@ -1,17 +1,22 @@
 import React from 'react';
 import * as styles from './Contact.module.css';
+import classnames from 'classnames';
 
-const Contact: React.FC = () => {
+interface ContactProps {
+  className?: string;
+}
+
+const Contact: React.FC<ContactProps> = ({ className }) => {
   return (
-    <div id="contact" className={styles.container}>
+    <section id="contact" className={classnames(className, styles.container)}>
       <h1>Open to Work</h1>
       <p className="mono">
         Looking for a frontend or full stack web app developer? Reach out!
       </p>
-      <a className="mono highlightedLink" href="mailto:dan@dhaggerty.com">
+      <a className="mono" href="mailto:dan@dhaggerty.com">
         dan@dhaggerty.com
       </a>
-      <ul className="mono highlightedLink">
+      <ul className="mono">
         <li>
           <a
             target="_blank"
@@ -49,7 +54,7 @@ const Contact: React.FC = () => {
           </a>
         </li>
       </ul>
-    </div>
+    </section>
   );
 };
 

@@ -4,18 +4,17 @@ import classnames from 'classnames';
 
 const Credits: React.FC = () => {
   return (
-    <div className={classnames(styles.container, 'mono')}>
-      <span>
+    <section className={classnames(styles.container, 'mono')}>
+      <p>
         This site was built using{' '}
-        <a
-          href="https://www.gatsbyjs.com"
-          target="_blank"
-          className="highlightedLink"
-          rel="noreferrer"
-        >
+        <a href="https://www.gatsbyjs.com" target="_blank" rel="noreferrer">
           Gatsby
         </a>
-      </span>
+        {' with a little help from '}
+        <a href="https://chat.openai.com" target="_blank" rel="noreferrer">
+          ChatGPT
+        </a>
+      </p>
       <p>
         See the source code on{' '}
         <a
@@ -27,8 +26,8 @@ const Credits: React.FC = () => {
           Github
         </a>
       </p>
-      <span>© {new Date().getFullYear()} Dan Haggerty</span>
-    </div>
+      <p>© {new Date().getFullYear()} Dan Haggerty</p>
+    </section>
   );
 };
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import * as styles from './UnderConstructionMessage.module.css';
 
 interface UnderConstructionMessageProps {
   message?: string;
@@ -19,9 +20,13 @@ const UnderConstructionMessage: React.FC<UnderConstructionMessageProps> = ({
     };
   }, [showCursor]);
 
-  const text = `${message || 'Under construction'}${showCursor ? '_' : ''}`;
+  const text = `${message || 'Under construction'}${showCursor ? '_' : ' '}`;
 
-  return <p className={'mono'}>{text}</p>;
+  return (
+    <span className={styles.message}>
+      <p className="mono">{text}</p>
+    </span>
+  );
 };
 
 export default UnderConstructionMessage;
