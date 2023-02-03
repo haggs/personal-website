@@ -29,8 +29,19 @@
 }
 
 .profilePhoto {
-  width: min(400px, 60vw);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
   border-radius: 50%;
+  -khtml-border-radius: 50%;
+  width: min(400px, 60vw);
+}
+
+.profilePhoto img {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -khtml-border-radius: 50%;
+  vertical-align: middle;
 }
 
 .lifeLinksContainer {

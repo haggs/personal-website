@@ -38,11 +38,12 @@ const IndexPage: React.FC = () => {
           </div>
         </div>
         <div className={styles.profilePhotoContainer}>
-          <StaticImage
-            className={styles.profilePhoto}
-            src="../images/profile-pic.jpg"
-            alt="Dan Haggerty smiling wearing sunglasses"
-          />
+          <div className={styles.profilePhoto}>
+            <StaticImage
+              src="../images/profile-pic.jpg"
+              alt="Dan Haggerty smiling wearing sunglasses"
+            />
+          </div>
         </div>
       </section>
       <section id="work-life">
