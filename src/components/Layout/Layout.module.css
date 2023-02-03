@@ -64,6 +64,11 @@
     display: inline-block;
     margin-right: 2rem;
   }
+
+  .main {
+    grid-area: header;
+    padding: 0 var(--page-padding);
+  }
 }
 
 @media only screen and (max-width: 900px) {
@@ -71,16 +76,16 @@
     display: inline-block;
     margin-right: 1rem;
   }
+
+  .main {
+    grid-area: main;
+    padding: 0;
+  }
 }
 
 .darkModeToggle {
   grid-column-start: dark-mode-toggle;
   justify-self: end;
-}
-
-.main {
-  grid-area: header;
-  padding: 0 var(--page-padding);
 }
 
 .footer {
