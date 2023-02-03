@@ -22,16 +22,15 @@
   --site-background-color: var(--color-1);
   --link-color: var(--color-2);
   --link-color-hover: var(--text-color);
-  --icon-color: var(--color-4);
-  --icon-color-hover: var(--text-color);
+  --link-accent-color: var(--color-4);
+  --link-accent-color-hover: var(--text-color);
 }
 
 /* Dark Mode */
 :root.dark {
   --text-color: var(--color-1);
   --site-background-color: var(--color-5);
-  --link-color: var(--color-4);
-  --icon-color: var(--color-3);
+  --link-accent-color: var(--color-3);
 }
 
 /* Element styles */
@@ -83,8 +82,12 @@ a.button:not(.icon):hover {
   border: 1px solid var(--text-color);
 }
 
+.link-accent,
 .icon {
-  color: var(--icon-color);
+  color: var(--link-accent-color);
+}
+
+.icon {
   font-size: var(--icon-button-default-height);
   line-height: var(--icon-button-default-height);
   background: none;
@@ -95,8 +98,9 @@ a.button:not(.icon):hover {
   justify-content: center;
 }
 
-.icon:hover {
-  color: var(--icon-color-hover);
+.icon:hover,
+.link-accent:hover {
+  color: var(--link-accent-color-hover);
 }
 
 .icon.hover-fill svg {
@@ -105,7 +109,7 @@ a.button:not(.icon):hover {
 }
 
 .icon.hover-fill:hover svg {
-  fill: var(--icon-color-hover);
+  fill: var(--link-accent-color-hover);
 }
 
 ul {
@@ -125,4 +129,5 @@ h5,
 h6,
 p {
   margin-top: 0;
+  line-height: 1.5;
 }

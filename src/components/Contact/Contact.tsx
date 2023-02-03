@@ -13,7 +13,7 @@ const Contact: React.FC<ContactProps> = ({ className }) => {
       <p className="mono">
         Looking for a frontend or full stack web app developer? Reach out!
       </p>
-      <a className="mono" href="mailto:dan@dhaggerty.com">
+      <a className="mono link-accent" href="mailto:dan@dhaggerty.com">
         dan@dhaggerty.com
       </a>
       <ul className="mono">

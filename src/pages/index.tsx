@@ -8,18 +8,36 @@ import UnderConstructionMessage from '../components/UnderConstructionMessage/Und
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { FiArrowDown } from '@react-icons/all-files/fi/FiArrowDown';
 import { FiArrowRight } from '@react-icons/all-files/fi/FiArrowRight';
+import classnames from 'classnames';
 
 const IndexPage: React.FC = () => {
   return (
     <Layout>
       <section className={styles.intro}>
         <div className={styles.introText}>
-          <h1 className={styles.title}>DAN HAGGERTY</h1>
-          <h2 className="mono">Web developer, home improvement enthusiast</h2>
-          <UnderConstructionMessage message="Site under construction" />
+          <h1 className={styles.title}>Dan Haggerty</h1>
+          <h1>
+            Full stack developer and home improvement enthusiast, based in
+            Detroit, Michigan.
+          </h1>
+          <p>
+            Hi, I'm Dan. I recently resigned from Twitter after 5 years working
+            on content review tools in the Trust & Safety space. I'm a full
+            stack developer who leans heavily towards the front end, and I'm
+            super into React/Typescript. During this time off between jobs, I've
+            been working on renovating my home and otherwise just relishing in
+            this moment.
+          </p>
+          <p>
+            I'm open to work at the moment, so don't hesitate to{' '}
+            <AnchorLink stripHash to="#contact" title="Contact me">
+              contact me
+            </AnchorLink>{' '}
+            if you need help!
+          </p>
           <div className={styles.lifeLinksContainer}>
             <AnchorLink
-              className={styles.lifeLink}
+              className={classnames('link-accent', styles.lifeLink)}
               stripHash
               to="#work-life"
               title="Work Life"
@@ -28,7 +46,7 @@ const IndexPage: React.FC = () => {
               <FiArrowDown />
             </AnchorLink>
             <Link
-              className={styles.lifeLink}
+              className={classnames('link-accent', styles.lifeLink)}
               to="/personal-life"
               title="Personal Life"
             >
@@ -42,6 +60,8 @@ const IndexPage: React.FC = () => {
             <StaticImage
               src="../images/profile-pic.jpg"
               alt="Dan Haggerty smiling wearing sunglasses"
+              className={styles.profilePhoto}
+              placeholder="none"
             />
           </div>
         </div>

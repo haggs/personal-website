@@ -7,7 +7,7 @@ const Logo: React.FC = () => {
     <a
       href="/"
       title="Go home"
-      className={classnames(styles.text, 'mono', 'highlightedLink')}
+      className={classnames(styles.text, 'link-accent', 'mono')}
     >
       DH._
     </a>
