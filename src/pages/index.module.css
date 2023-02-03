@@ -10,6 +10,7 @@
   flex: 1;
   height: 100vh;
   display: flex;
+  gap: 2rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -17,9 +18,11 @@
 
 .title {
   font-size: min(10vw, 6rem);
+  margin-bottom: 0;
 }
 
 .profilePhotoContainer {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,4 +31,17 @@
 .profilePhoto {
   width: min(400px, 60vw);
   border-radius: 50%;
+}
+
+.lifeLinksContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 25%;
+}
+
+.lifeLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

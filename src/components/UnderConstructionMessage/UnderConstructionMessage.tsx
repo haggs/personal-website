@@ -20,12 +20,11 @@ const UnderConstructionMessage: React.FC<UnderConstructionMessageProps> = ({
     };
   }, [showCursor]);
 
-  const text = `${message || 'Under construction'}${showCursor ? '_' : ' '}`;
-
   return (
-    <span className={styles.message}>
-      <p className="mono">{text}</p>
-    </span>
+    <p className="mono">
+      {message || 'Under construction'}
+      <span className={styles.cursor}>{showCursor ? '_' : ' '}</span>
+    </p>
   );
 };
 

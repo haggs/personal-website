@@ -51,7 +51,9 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
             className={styles.skipLink}
             href="#main"
             title="Skip to main content"
-          >{`Skip to content`}</a>
+          >
+            Skip to content
+          </a>
           <Logo />
         </div>
         <Navigation className={styles.fullNav} />

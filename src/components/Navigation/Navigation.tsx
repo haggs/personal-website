@@ -34,7 +34,9 @@ const Navigation: React.FC<NavigationProps> = ({
     <nav className={className}>
       <ul className={navLinkListStyles}>
         <li>
-          <Link to="/" onClick={delayOnClick}>{`Home`}</Link>
+          <Link to="/" onClick={delayOnClick}>
+            Home
+          </Link>
         </li>
         <li>
           <AnchorLink
@@ -42,21 +44,24 @@ const Navigation: React.FC<NavigationProps> = ({
             to="/#work-life"
             title="Work Life"
             onAnchorLinkClick={onNavigate}
-          >{`Work Life`}</AnchorLink>
+          >
+            Work Life
+          </AnchorLink>
         </li>
         <li>
-          <Link
-            to="/personal-life"
-            onClick={delayOnClick}
-          >{`Personal Life`}</Link>
+          <Link to="/personal-life" onClick={delayOnClick}>
+            Personal Life
+          </Link>
         </li>
         <li>
           <AnchorLink
             stripHash
-            to="/#contact"
+            to="#contact"
             title="contact"
             onAnchorLinkClick={onNavigate}
-          >{`Contact`}</AnchorLink>
+          >
+            Contact
+          </AnchorLink>
         </li>
         <li>
           <a className="button" href="/resume.pdf" target="_blank">
