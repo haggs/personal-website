@@ -24,10 +24,6 @@ const DarkModeToggle: React.FC<DarkModeToggleProps> = ({ className }) => {
     window.__setPreferredTheme(newValue ? 'dark' : 'light');
   };
 
-  if (typeof window === 'undefined') {
-    return null;
-  }
-
   return (
     <button
       className={classnames(className, styles.toggle, 'icon', 'hover-fill')}
