@@ -18,6 +18,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@fontsource/red-hat-display": "^4.5.12",
+    "@fontsource/red-hat-mono": "^4.5.12",
     "@fontsource/source-code-pro": "^4.5.14",
     "@fontsource/work-sans": "^4.5.14",
     "@mdx-js/react": "^2.2.1",

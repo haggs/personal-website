@@ -25,15 +25,15 @@ const IndexPage: React.FC = () => {
             on content review tools in the Trust & Safety space. I'm a full
             stack developer who leans heavily towards the front end, and I'm
             super into React/Typescript. During this time off between jobs, I've
-            been working on renovating my home and otherwise just relishing in
-            in this moment
+            been working on renovating my home and otherwise just enjoying this
+            moment.
           </p>
           <p>
-            I'm open to work right now, so don't hesitate to{' '}
+            I'm open to work right now,{' '}
             <AnchorLink stripHash to="#contact" title="Contact me">
               contact me
             </AnchorLink>{' '}
-            if you need a developer!
+            if you need a senior full stack or frontend developer.
           </p>
           <div className={styles.lifeLinksContainer}>
             <AnchorLink

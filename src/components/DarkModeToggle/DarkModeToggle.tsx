@@ -10,7 +10,9 @@ interface DarkModeToggleProps {
 
 const DarkModeToggle: React.FC<DarkModeToggleProps> = ({ className }) => {
   let windowDarkModeSet = false;
-  if (typeof window !== 'undefined') {
+  const hasWindow = typeof window !== 'undefined';
+
+  if (hasWindow) {
     windowDarkModeSet = window.__theme === 'dark';
   }
 
@@ -23,16 +25,13 @@ const DarkModeToggle: React.FC<DarkModeToggleProps> = ({ className }) => {
   };
 
   if (typeof window === 'undefined') {
-    // Never server-side render this, since we can't determine
-    // the correct initial state until we get to the client.
-    // Alternatively, use a loading placeholder here.
     return null;
   }
 
   return (
     <button
       className={classnames(className, styles.toggle, 'icon', 'hover-fill')}
-      onClick={handleToggleDarkMode}
+      onClick={hasWindow ? handleToggleDarkMode : undefined}
       aria-label={`Turn ${checked ? 'off' : 'on'} dark mode`}
     >
       {checked ? (

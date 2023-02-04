@@ -8,8 +8,8 @@
   --drop-shadow-color: var(--color-5);
 
   /* Font */
-  --font-primary: 'Work SansVariable', sans-serif;
-  --font-mono: 'Source Code ProVariable', monospace;
+  --font-primary: 'Red Hat DisplayVariable', sans-serif;
+  --font-mono: 'Red Hat MonoVariable', monospace;
   --icon-button-default-height: 2rem;
 
   /* Animations */
