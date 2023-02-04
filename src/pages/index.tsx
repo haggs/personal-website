@@ -35,7 +35,6 @@ const IndexPage: React.FC = () => {
           <div className={styles.lifeLinksContainer}>
             <AnchorLink
               className={classnames('mono', 'link-accent', styles.lifeLink)}
-              className={classnames('mono', 'link-accent', styles.lifeLink)}
               stripHash
               to="#work-life"
               title="Work Life"
@@ -73,7 +72,6 @@ const IndexPage: React.FC = () => {
   );
 };
 
-export const Head: HeadFC = () => <Seo />;
 export const Head: HeadFC = () => <Seo />;
 
 export default IndexPage;
