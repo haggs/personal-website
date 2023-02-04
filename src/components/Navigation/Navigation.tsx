@@ -56,7 +56,7 @@ const Navigation: React.FC<NavigationProps> = ({
         <li>
           <AnchorLink
             stripHash
-            to="#contact"
+            to="/#contact"
             title="contact"
             onAnchorLinkClick={onNavigate}
           >
