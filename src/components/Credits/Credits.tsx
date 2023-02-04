@@ -1,10 +1,9 @@
 import React from 'react';
 import * as styles from './Credits.module.css';
-import classnames from 'classnames';
 
 const Credits: React.FC = () => {
   return (
-    <section className={classnames(styles.container, 'mono')}>
+    <section className={styles.container}>
       <p>
         This site was built using{' '}
         <a href="https://www.gatsbyjs.com" target="_blank" rel="noreferrer">
@@ -14,8 +13,7 @@ const Credits: React.FC = () => {
         <a href="https://chat.openai.com" target="_blank" rel="noreferrer">
           ChatGPT
         </a>
-      </p>
-      <p>
+        <br />
         See the source code on{' '}
         <a
           href="https://github.com/haggs/personal-website"

@@ -4,11 +4,11 @@ import Seo from '../components/Seo/Seo';
 import Layout from '../components/Layout/Layout';
 import { HeadFC, Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import UnderConstructionMessage from '../components/UnderConstructionMessage/UnderConstructionMessage';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { FiArrowDown } from '@react-icons/all-files/fi/FiArrowDown';
 import { FiArrowRight } from '@react-icons/all-files/fi/FiArrowRight';
 import classnames from 'classnames';
+import UnderConstructionMessage from '../components/UnderConstructionMessage/UnderConstructionMessage';
 
 const IndexPage: React.FC = () => {
   return (
@@ -16,10 +16,7 @@ const IndexPage: React.FC = () => {
       <section className={styles.intro}>
         <div className={styles.introText}>
           <h1 className={styles.title}>Dan Haggerty</h1>
-          <h1>
-            Full stack developer and home improvement enthusiast, based in
-            Detroit, Michigan.
-          </h1>
+          <h2>Full stack developer based in Detroit, Michigan.</h2>
           <p>
             Hey, I'm Dan. I recently resigned from Twitter after 5 years working
             on content review tools in the Trust & Safety space. I'm a full
@@ -37,7 +34,7 @@ const IndexPage: React.FC = () => {
           </p>
           <div className={styles.lifeLinksContainer}>
             <AnchorLink
-              className={classnames('link-accent', styles.lifeLink)}
+              className={classnames('mono', 'link-accent', styles.lifeLink)}
               stripHash
               to="#work-life"
               title="Work Life"
@@ -69,11 +66,12 @@ const IndexPage: React.FC = () => {
       <section id="work-life">
         <h1>Work Experience</h1>
         <UnderConstructionMessage />
+        {/* <WorkExperience /> */}
       </section>
     </Layout>
   );
 };
 
-export const Head: HeadFC = () => <Seo title="Home" />;
+export const Head: HeadFC = () => <Seo />;
 
 export default IndexPage;
