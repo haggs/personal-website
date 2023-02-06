@@ -13,6 +13,8 @@ const STICKY_THRESHOLD_PX = 200;
 // This should be kept in sync the breakpoints in Layout.modules.css
 const MOBILE_BREAKPOINT = 900;
 
+const DarkModeContext = React.createContext('light');
+
 const Layout: React.FC<PropsWithChildren> = ({ children }) => {
   const [showNavigationMenu, setShowNavigationMenu] = useState(false);
   const [showScrollToTopButton, setShowScrollToTopButton] = useState(false);

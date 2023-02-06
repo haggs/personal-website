@@ -1,8 +1,13 @@
-'use strict';
+import * as React from 'react';
+import type { GatsbySSR } from 'gatsby';
 
-const React = require('react');
-
-exports.onRenderBody = ({ setHeadComponents }) => {
+/**
+ * Sets the theme to dark or light based on the user's preference in either
+ * their local storage or their OS settings.
+ */
+export const onRenderBody: GatsbySSR['onRenderBody'] = ({
+  setHeadComponents,
+}) => {
   setHeadComponents([
     <script
       dangerouslySetInnerHTML={{

@@ -1,5 +1,8 @@
 import React from 'react';
 import * as styles from './Job.module.css';
+import { GatsbyImage, ImageDataLike, getImage } from 'gatsby-plugin-image';
+import { FiCalendar } from '@react-icons/all-files/fi/FiCalendar';
+import { FiMapPin } from '@react-icons/all-files/fi/FiMapPin';
 
 interface JobProps {
   jobQueryNode: Queries.JobsQueryQuery['allMdx']['nodes'][0];
@@ -12,22 +15,52 @@ const Job: React.FC<JobProps> = ({ jobQueryNode }) => {
     return null;
   }
 
-  const { company, contract, job_title, team, location, start_date, end_date } =
-    frontmatter;
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString + '-01');
+    const options: Intl.DateTimeFormatOptions = {
+      year: 'numeric',
+      month: 'long',
+    };
+    return new Intl.DateTimeFormat('en-US', options).format(date);
+  };
+
+  const {
+    company,
+    contract,
+    job_title,
+    team,
+    location,
+    start_date,
+    end_date,
+    logo_image,
+  } = frontmatter;
+
+  // TODO: Add dark mode to a React.Context
+  const logoImage = getImage(logo_image as ImageDataLike);
+  const logoAlt = company ? `${company} logo` : 'Company logo';
 
   return (
     <div className={styles.container}>
-      <div className={styles.imageContainer}>
-        <div className={styles.image} />
-      </div>
+      {logoImage && (
+        <div className={styles.imageContainer}>
+          <GatsbyImage image={logoImage} alt={logoAlt} />
+        </div>
+      )}
       <div className={styles.textContainer}>
         <h2>{company}</h2>
-        <h3>{job_title}</h3>
-        {contract && <h4>{contract}</h4>}
-        {team && <h5>{team}</h5>}
-        <h6>{location}</h6>
+        <h3>
+          {job_title}
+          {team && `, ${team}`} {contract && ' (Contract)'}
+        </h3>
+        {start_date && end_date && (
+          <p>
+            <FiCalendar className="icon-accent" />
+            {formatDate(start_date)} - {formatDate(end_date)}
+          </p>
+        )}
         <p>
-          {start_date} - {end_date}
+          <FiMapPin className="icon-accent" />
+          {location}
         </p>
         <p>{body}</p>
       </div>

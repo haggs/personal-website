@@ -9,14 +9,10 @@ interface DarkModeToggleProps {
 }
 
 const DarkModeToggle: React.FC<DarkModeToggleProps> = ({ className }) => {
-  let windowDarkModeSet = false;
   const hasWindow = typeof window !== 'undefined';
+  const windowIsDarkMode = hasWindow && window.__theme === 'dark';
 
-  if (hasWindow) {
-    windowDarkModeSet = window.__theme === 'dark';
-  }
-
-  const [checked, setChecked] = useState(windowDarkModeSet);
+  const [checked, setChecked] = useState(windowIsDarkMode);
 
   const handleToggleDarkMode = () => {
     const newValue = !checked;
@@ -26,7 +22,12 @@ const DarkModeToggle: React.FC<DarkModeToggleProps> = ({ className }) => {
 
   return (
     <button
-      className={classnames(className, styles.toggle, 'icon', 'hover-fill')}
+      className={classnames(
+        className,
+        styles.toggle,
+        'icon-button',
+        'hover-fill'
+      )}
       onClick={hasWindow ? handleToggleDarkMode : undefined}
       aria-label={`Turn ${checked ? 'off' : 'on'} dark mode`}
     >

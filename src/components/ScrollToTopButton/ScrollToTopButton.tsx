@@ -16,7 +16,7 @@ const ScrollToTopButton: React.FC<ScrollToTopButtonProps> = ({ className }) => {
 
   return (
     <button
-      className={classnames('icon', className)}
+      className={classnames('icon-button', className)}
       aria-label="Scroll to Top"
       onClick={scrollToTop}
     >

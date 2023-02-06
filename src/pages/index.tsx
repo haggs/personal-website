@@ -2,11 +2,10 @@ import React from 'react';
 import * as styles from './index.module.css';
 import Seo from '../components/Seo/Seo';
 import Layout from '../components/Layout/Layout';
-import { HeadFC, Link } from 'gatsby';
+import { HeadFC } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { FiArrowDown } from '@react-icons/all-files/fi/FiArrowDown';
-import { FiArrowRight } from '@react-icons/all-files/fi/FiArrowRight';
 import classnames from 'classnames';
 import WorkExperience from '../components/WorkExperience/WorkExperience';
 
@@ -42,14 +41,14 @@ const IndexPage: React.FC = () => {
               Work Life
               <FiArrowDown />
             </AnchorLink>
-            <Link
+            {/* <Link
               className={classnames('link-accent', styles.lifeLink)}
               to="/personal-life"
               title="Personal Life"
             >
               Personal Life
               <FiArrowRight />
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div className={styles.profilePhotoContainer}>
@@ -63,11 +62,9 @@ const IndexPage: React.FC = () => {
           </div>
         </div>
       </section>
-      <section id="work-experience">
+      <section id="work-experience" className={styles.workExperience}>
         <h1>Work Experience</h1>
-        <div className={styles.workExperience}>
-          <WorkExperience />
-        </div>
+        <WorkExperience />
       </section>
     </Layout>
   );

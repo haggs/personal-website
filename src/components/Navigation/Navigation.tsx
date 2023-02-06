@@ -48,11 +48,11 @@ const Navigation: React.FC<NavigationProps> = ({
             Work Life
           </AnchorLink>
         </li>
-        <li>
+        {/* <li>
           <Link to="/personal-life" onClick={delayOnClick}>
             Personal Life
           </Link>
-        </li>
+        </li> */}
         <li>
           <AnchorLink
             stripHash

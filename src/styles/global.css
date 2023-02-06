@@ -79,27 +79,27 @@ a:hover {
   color: var(--link-color-hover);
 }
 
-button:not(.icon),
-a.button:not(.icon) {
+button:not(.icon-button),
+a.button:not(.icon-button) {
   color: var(--link-color);
   border: 1px solid var(--link-color);
   border-radius: 3px;
   padding: 0.6rem 1rem;
 }
 
-button:not(.icon):hover,
-a.button:not(.icon):hover {
+button:not(.icon-button):hover,
+a.button:not(.icon-button):hover {
   color: var(--background-color);
   background-color: var(--text-color);
   border: 1px solid var(--text-color);
 }
 
 .link-accent,
-.icon {
+.icon-button {
   color: var(--link-accent-color);
 }
 
-.icon {
+.icon-button {
   font-size: var(--icon-button-default-height);
   line-height: var(--icon-button-default-height);
   background: none;
@@ -110,18 +110,22 @@ a.button:not(.icon):hover {
   justify-content: center;
 }
 
-.icon:hover,
+.icon-button:hover,
 .link-accent:hover {
   color: var(--link-accent-color-hover);
 }
 
-.icon.hover-fill svg {
+.icon-button.hover-fill svg {
   fill: transparent;
   transition: fill var(--animation-duration);
 }
 
-.icon.hover-fill:hover svg {
+.icon-button.hover-fill:hover svg {
   fill: var(--link-accent-color-hover);
+}
+
+svg.icon-accent {
+  color: var(--link-accent-color);
 }
 
 ul {
@@ -129,7 +133,7 @@ ul {
   padding: 0;
 }
 
-li {
+li:not(:last-child) {
   margin-bottom: 0.5rem;
 }
 

@@ -3,4 +3,3 @@
 prettier.config.js
 public
 src/gatsby-types.d.ts
-gatsby-ssr.tsx

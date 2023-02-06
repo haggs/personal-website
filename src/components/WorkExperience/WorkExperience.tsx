@@ -20,6 +20,16 @@ const WorkExperience: React.FC = () => {
             end_date
             contract
             team
+            logo_image {
+              childImageSharp {
+                gatsbyImageData(width: 64)
+              }
+            }
+            logo_image_dark {
+              childImageSharp {
+                gatsbyImageData(width: 64)
+              }
+            }
           }
           body
         }
