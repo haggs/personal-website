@@ -1,8 +1,6 @@
 .container {
-  --gap: calc(min(36px, 7vw));
   display: flex;
-  gap: var(--gap);
-  padding: var(--gap);
+  gap: calc(min(36px, 7vw));
   flex-wrap: wrap;
 }
 
@@ -12,7 +10,7 @@
 
 .textContainer {
   flex: 1;
-  min-width: 250px;
+  min-width: 260px;
 }
 
 .textContainer h2 {

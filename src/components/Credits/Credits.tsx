@@ -13,8 +13,7 @@ const Credits: React.FC = () => {
         <a href="https://chat.openai.com" target="_blank" rel="noreferrer">
           ChatGPT
         </a>
-        <br />
-        See the source code on{' '}
+        {'. See the source code on '}
         <a
           href="https://github.com/haggs/personal-website"
           target="_blank"
@@ -23,8 +22,9 @@ const Credits: React.FC = () => {
         >
           Github
         </a>
+        .
+        <br />© {new Date().getFullYear()} Dan Haggerty
       </p>
-      <p>© {new Date().getFullYear()} Dan Haggerty</p>
     </section>
   );
 };

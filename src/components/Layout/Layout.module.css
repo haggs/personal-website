@@ -11,6 +11,7 @@
   grid-template-areas: 'header' 'main' 'footer';
   align-items: start;
   padding: var(--page-padding);
+  width: calc(100vw - 2 * var(--page-padding));
   max-width: var(--page-max-width);
 }
 
