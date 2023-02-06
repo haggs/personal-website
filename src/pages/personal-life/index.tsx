@@ -2,22 +2,22 @@ import * as React from 'react';
 import * as styles from './personal-life.module.css';
 import Layout from '../../components/Layout/Layout';
 import Seo from '../../components/Seo/Seo';
-import { HeadFC, graphql } from 'gatsby';
+import { HeadFC, graphql, Link } from 'gatsby';
 import UnderConstructionMessage from '../../components/UnderConstructionMessage/UnderConstructionMessage';
 
 interface PersonalLifePageProps {
   data: any;
 }
 
-const PersonalLifePage: React.FC<PersonalLifePageProps> = () => {
+const PersonalLifePage: React.FC<PersonalLifePageProps> = ({ data }: any) => {
   return (
     <Layout>
       <section className={styles.container}>
         <h1>Personal Life</h1>
         <UnderConstructionMessage />
       </section>
-      <div className={styles.container}>
-        {/* {data.allMdx.nodes.map((node: any) => (
+      {/* <div className={styles.container}>
+        {data.allMdx.nodes.map((node: any) => (
           <article key={node.id}>
             <h2>
               <Link to={`/personal-life/${node.frontmatter.slug}`}>
@@ -26,8 +26,8 @@ const PersonalLifePage: React.FC<PersonalLifePageProps> = () => {
             </h2>
             <p>Posted: {node.frontmatter.date}</p>
           </article>
-        ))} */}
-      </div>
+        ))}
+      </div> */}
     </Layout>
   );
 };

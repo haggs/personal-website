@@ -1,3 +1,26 @@
 .container {
-  
+  --gap: 48px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  color: var(--text-color-dark);
+  background-color: var(--background-color-dark);
+  background-image: linear-gradient(rgb(0 0 0/40%) 0 0);
+  box-shadow: var(--card-box-shadow);
+  border-radius: 8px;
+  gap: var(--gap);
+  padding: var(--gap);
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: 64px;
+  height: 64px;
+  background-color: blue;
+}
+
+.textContainer {
 }

@@ -5,7 +5,12 @@
   --color-3: #cc4250; /* main brand color */
   --color-4: #db7965; /* dark accent */
   --color-5: #262e3b; /* dark shades */
-  --drop-shadow-color: var(--color-5);
+  --card-box-shadow: 0 16px 38px -12px rgb(0 0 0 / 56%),
+    0 4px 25px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+  --background-color-light: var(--color-1);
+  --background-color-dark: var(--color-5);
+  --text-color-light: var(--color-5);
+  --text-color-dark: var(--color-1);
 
   /* Font */
   --font-primary: 'Red Hat DisplayVariable', sans-serif;
@@ -18,8 +23,10 @@
 
 /* Light Mode */
 :root {
-  --text-color: var(--color-5);
-  --site-background-color: var(--color-1);
+  --text-color: var(--text-color-light);
+  --background-color: var(--background-color-light);
+  --text-color-inverted: var(--text-color-dark);
+  --background-color-inverted: var(--background-color-dark);
   --link-color: var(--color-2);
   --link-color-hover: var(--text-color);
   --link-accent-color: var(--color-4);
@@ -28,16 +35,21 @@
 
 /* Dark Mode */
 :root.dark {
-  --text-color: var(--color-1);
-  --site-background-color: var(--color-5);
+  --text-color: var(--text-color-dark);
+  --background-color: var(--background-color-dark);
+  --text-color-inverted: var(--text-color-light);
+  --background-color-inverted: var(--background-color-light);
   --link-accent-color: var(--color-3);
 }
 
 /* Element styles */
 
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: var(--text-color);
-  background-color: var(--site-background-color);
+  background-color: var(--background-color);
   margin: 0;
   font-family: var(--font-primary);
 }
@@ -77,7 +89,7 @@ a.button:not(.icon) {
 
 button:not(.icon):hover,
 a.button:not(.icon):hover {
-  color: var(--site-background-color);
+  color: var(--background-color);
   background-color: var(--text-color);
   border: 1px solid var(--text-color);
 }

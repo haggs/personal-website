@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Job from '../Job/Job';
 
 const WorkExperience: React.FC = () => {
-  const data = useStaticQuery(graphql`
+  const data = useStaticQuery<Queries.JobsQueryQuery>(graphql`
     query JobsQuery {
       allMdx(
         filter: { internal: { contentFilePath: { regex: "/jobs/" } } }
@@ -21,7 +21,7 @@ const WorkExperience: React.FC = () => {
             contract
             team
           }
-          excerpt
+          body
         }
       }
     }
@@ -29,18 +29,10 @@ const WorkExperience: React.FC = () => {
 
   return (
     <ul className={styles.jobList}>
-      {data.allMdx.nodes.map((node: any) => (
-        <Job
-          key={node.id}
-          company={node.frontmatter.company}
-          jobTitle={node.frontmatter.job_title}
-          team={node.frontmatter.team}
-          contract={node.frontmatter.contract}
-          location={node.frontmatter.location}
-          startDate={node.frontmatter.start_date}
-          endDate={node.frontmatter.end_date}
-          excerpt={node.excerpt}
-        />
+      {data.allMdx.nodes.map((node) => (
+        <li key={node.id}>
+          <Job jobQueryNode={node} />
+        </li>
       ))}
     </ul>
   );

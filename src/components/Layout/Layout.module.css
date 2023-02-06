@@ -1,5 +1,7 @@
 :root {
   --page-padding: 36px;
+  --page-max-width: 1920px;
+  --main-side-padding: 100px;
 }
 
 .page {
@@ -9,6 +11,7 @@
   grid-template-areas: 'header' 'main' 'footer';
   align-items: start;
   padding: var(--page-padding);
+  max-width: var(--page-max-width);
 }
 
 .header {
@@ -67,7 +70,7 @@
 
   .main {
     grid-area: header;
-    padding: 0 var(--page-padding);
+    padding: 0 var(--main-side-padding);
   }
 }
 

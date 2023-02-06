@@ -57,3 +57,9 @@
   align-items: center;
   font-size: 1.2rem;
 }
+
+.workExperience {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}

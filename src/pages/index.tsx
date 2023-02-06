@@ -8,7 +8,7 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { FiArrowDown } from '@react-icons/all-files/fi/FiArrowDown';
 import { FiArrowRight } from '@react-icons/all-files/fi/FiArrowRight';
 import classnames from 'classnames';
-import UnderConstructionMessage from '../components/UnderConstructionMessage/UnderConstructionMessage';
+import WorkExperience from '../components/WorkExperience/WorkExperience';
 
 const IndexPage: React.FC = () => {
   return (
@@ -36,7 +36,7 @@ const IndexPage: React.FC = () => {
             <AnchorLink
               className={classnames('mono', 'link-accent', styles.lifeLink)}
               stripHash
-              to="#work-life"
+              to="#work-experience"
               title="Work Life"
             >
               Work Life
@@ -63,10 +63,11 @@ const IndexPage: React.FC = () => {
           </div>
         </div>
       </section>
-      <section id="work-life">
+      <section id="work-experience">
         <h1>Work Experience</h1>
-        <UnderConstructionMessage />
-        {/* <WorkExperience /> */}
+        <div className={styles.workExperience}>
+          <WorkExperience />
+        </div>
       </section>
     </Layout>
   );

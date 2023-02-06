@@ -1,3 +1,7 @@
-.joblist {
-  
+.jobList {
+  width: 100%;
+}
+
+.jobList > li {
+  margin-bottom: 2rem;
 }

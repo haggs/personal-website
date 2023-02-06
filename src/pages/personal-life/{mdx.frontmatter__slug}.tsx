@@ -12,7 +12,7 @@ const Story: React.FC<PropsWithChildren<StoryProps>> = ({ data, children }) => {
   const image = getImage(data.mdx.frontmatter.hero_image);
 
   return (
-    <Layout pageTitle={data.mdx.frontmatter.title}>
+    <Layout>
       <p>{data.mdx.frontmatter.date}</p>
       {image && (
         <GatsbyImage image={image} alt={data.mdx.frontmatter.hero_image_alt} />
