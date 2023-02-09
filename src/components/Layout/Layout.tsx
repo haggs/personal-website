@@ -7,7 +7,6 @@ import Logo from '../Logo/Logo';
 import Navigation from '../Navigation/Navigation';
 import NavigationMenuButton from '../NavigationMenuButton/NavigationMenuButton';
 import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
-import classNames from 'classnames';
 
 const STICKY_THRESHOLD_PX = 200;
 
@@ -40,16 +39,25 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
     }
   };
 
-  const toggleOpenNavigationMenu = () => {
+  const toggleNavMenu = () => {
     setShowNavigationMenu(!showNavigationMenu);
   };
 
-  const pageClasses = classNames(styles.page, {
-    [styles.menuOpen]: showNavigationMenu,
-  });
+  const handleNavMenuLinkClick = (anchorIdToScrollTo?: string) => {
+    toggleNavMenu();
+    if (anchorIdToScrollTo) {
+      // A little hack to scroll to an anchor link after closing the menu
+      // (otherwise the menu would cover the content)
+      setTimeout(() => {
+        document
+          .getElementById(anchorIdToScrollTo)
+          ?.scrollIntoView({ behavior: 'smooth' });
+      }, 1);
+    }
+  };
 
   return (
-    <div className={pageClasses}>
+    <div className={styles.page}>
       <header className={styles.header}>
         <div className={styles.logoAndSkipLink}>
           <a
@@ -64,7 +72,7 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
         <Navigation className={styles.fullNav} />
         <NavigationMenuButton
           open={showNavigationMenu}
-          onClick={toggleOpenNavigationMenu}
+          onClick={toggleNavMenu}
           className={styles.navMenuButton}
         />
         <DarkModeToggle className={styles.darkModeToggle} />
@@ -73,7 +81,7 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
         <Navigation
           className={styles.navMenu}
           stacked
-          onNavigate={toggleOpenNavigationMenu}
+          onNavigate={handleNavMenuLinkClick}
         />
       ) : (
         <>

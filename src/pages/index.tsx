@@ -35,7 +35,7 @@ const IndexPage: React.FC = () => {
             <AnchorLink
               className={classnames('mono', 'link-accent', styles.lifeLink)}
               stripHash
-              to="#work-experience"
+              to="#work-life"
               title="Work Life"
             >
               Work Life
@@ -62,7 +62,7 @@ const IndexPage: React.FC = () => {
           </div>
         </div>
       </section>
-      <section id="work-experience" className={styles.workExperience}>
+      <section id="work-life" className={styles.workExperience}>
         <h1>Work Experience</h1>
         <WorkExperience />
       </section>

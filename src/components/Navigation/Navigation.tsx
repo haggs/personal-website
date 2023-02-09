@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 export interface NavigationProps {
-  onNavigate?: () => void;
+  onNavigate?: (anchorIdToScrollTo?: string) => void;
   stacked?: boolean;
   className?: string;
 }
@@ -19,14 +19,10 @@ const Navigation: React.FC<NavigationProps> = ({
     [styles.stackedList]: stacked,
   });
 
-  /**
-   * This prevents flicker when navigating to a new page
-   * but isn't used for AnchorLinks because they don't
-   * cause a page refresh
-   */
-  const delayOnClick = () => {
+  const handleClickLink = (anchorIdToScrollTo?: string) => () => {
+    // A little hack to prevent flicker when switching pages
     setTimeout(() => {
-      onNavigate && onNavigate();
+      onNavigate && onNavigate(anchorIdToScrollTo);
     }, 10);
   };
 
@@ -34,7 +30,7 @@ const Navigation: React.FC<NavigationProps> = ({
     <nav className={className}>
       <ul className={navLinkListStyles}>
         <li>
-          <Link to="/" onClick={delayOnClick}>
+          <Link to="/" onClick={handleClickLink()}>
             Home
           </Link>
         </li>
@@ -43,13 +39,13 @@ const Navigation: React.FC<NavigationProps> = ({
             stripHash
             to="/#work-life"
             title="Work Life"
-            onAnchorLinkClick={onNavigate}
+            onAnchorLinkClick={handleClickLink('work-life')}
           >
             Work Life
           </AnchorLink>
         </li>
         {/* <li>
-          <Link to="/personal-life" onClick={delayOnClick}>
+          <Link to="/personal-life" onClick={handleClickLink()}>
             Personal Life
           </Link>
         </li> */}
@@ -58,7 +54,7 @@ const Navigation: React.FC<NavigationProps> = ({
             stripHash
             to="/#contact"
             title="contact"
-            onAnchorLinkClick={onNavigate}
+            onAnchorLinkClick={handleClickLink('contact')}
           >
             Contact
           </AnchorLink>

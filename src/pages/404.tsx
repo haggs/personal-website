@@ -2,6 +2,7 @@ import React from 'react';
 import { HeadFC, Link, PageProps } from 'gatsby';
 import * as styles from './404.module.css';
 import Layout from '../components/Layout/Layout';
+import Seo from '../components/Seo/Seo';
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
@@ -22,4 +23,4 @@ const NotFoundPage: React.FC<PageProps> = () => {
 
 export default NotFoundPage;
 
-export const Head: HeadFC = () => <title>Not found</title>;
+export const Head: HeadFC = () => <Seo title="404" />;
