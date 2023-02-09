@@ -7,13 +7,12 @@ import Logo from '../Logo/Logo';
 import Navigation from '../Navigation/Navigation';
 import NavigationMenuButton from '../NavigationMenuButton/NavigationMenuButton';
 import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
+import classNames from 'classnames';
 
 const STICKY_THRESHOLD_PX = 200;
 
 // This should be kept in sync the breakpoints in Layout.modules.css
 const MOBILE_BREAKPOINT = 900;
-
-const DarkModeContext = React.createContext('light');
 
 const Layout: React.FC<PropsWithChildren> = ({ children }) => {
   const [showNavigationMenu, setShowNavigationMenu] = useState(false);
@@ -45,8 +44,12 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
     setShowNavigationMenu(!showNavigationMenu);
   };
 
+  const pageClasses = classNames(styles.page, {
+    [styles.menuOpen]: showNavigationMenu,
+  });
+
   return (
-    <div className={styles.page}>
+    <div className={pageClasses}>
       <header className={styles.header}>
         <div className={styles.logoAndSkipLink}>
           <a
