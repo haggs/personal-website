@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import * as styles from './Job.module.css';
 import { GatsbyImage, ImageDataLike, getImage } from 'gatsby-plugin-image';
 import { FiCalendar } from '@react-icons/all-files/fi/FiCalendar';
 import { FiMapPin } from '@react-icons/all-files/fi/FiMapPin';
+import DarkModeContext from '../../context/DarkModeContext';
 
 interface JobProps {
   jobQueryNode: Queries.JobsQueryQuery['allMdx']['nodes'][0];
 }
 
 const Job: React.FC<JobProps> = ({ jobQueryNode }) => {
+  const { dark } = useContext(DarkModeContext);
+
   const { body, frontmatter } = jobQueryNode;
 
   if (!frontmatter) {
@@ -33,10 +36,11 @@ const Job: React.FC<JobProps> = ({ jobQueryNode }) => {
     start_date,
     end_date,
     logo_image,
+    logo_image_dark,
   } = frontmatter;
 
-  // TODO: Add dark mode to a React.Context
-  const logoImage = getImage(logo_image as ImageDataLike);
+  const imageToUse = dark && logo_image_dark ? logo_image_dark : logo_image;
+  const logoImage = getImage(imageToUse as ImageDataLike);
   const logoAlt = company ? `${company} logo` : 'Company logo';
 
   return (
