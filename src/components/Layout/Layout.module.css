@@ -63,6 +63,10 @@
   justify-content: center;
 }
 
+.main {
+  grid-area: main;
+}
+
 @media only screen and (min-width: 901px) {
   .fullNav {
     display: inline-block;
@@ -70,7 +74,6 @@
   }
 
   .main {
-    grid-area: header;
     padding: 0 var(--main-side-padding);
   }
 }
@@ -82,7 +85,6 @@
   }
 
   .main {
-    grid-area: main;
     padding: 0;
   }
 }

@@ -55,7 +55,6 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
       }, 1);
     }
   };
-
   return (
     <div className={styles.page}>
       <header className={styles.header}>

@@ -1,10 +1,10 @@
 import * as React from 'react';
-import * as styles from './personal-life.module.css';
+import * as styles from './PersonalLifeIndexPage.module.css';
 import Layout from '../../components/Layout/Layout';
 import Seo from '../../components/Seo/Seo';
 import { HeadFC, graphql, Link, PageProps } from 'gatsby';
 
-const PersonalLifePage: React.FC<
+const PersonalLifeIndexPage: React.FC<
   PageProps<Queries.PersonalLifeIndexQueryQuery>
 > = ({ data }) => {
   return (
@@ -18,7 +18,6 @@ const PersonalLifePage: React.FC<
                 {node.frontmatter.title}
               </Link>
             </h2>
-            <p>Posted: {node.frontmatter.date}</p>
           </article>
         ))}
       </section>
@@ -29,12 +28,10 @@ const PersonalLifePage: React.FC<
 export const query = graphql`
   query PersonalLifeIndexQuery {
     allMdx(
-      sort: { frontmatter: { date: DESC } }
       filter: { internal: { contentFilePath: { regex: "/personal-life/" } } }
     ) {
       nodes {
         frontmatter {
-          date(formatString: "MMMM D, YYYY")
           title
           slug
           hero_image {
@@ -44,8 +41,6 @@ export const query = graphql`
           }
           hero_image_alt
         }
-        id
-        excerpt
       }
     }
   }
@@ -53,4 +48,4 @@ export const query = graphql`
 
 export const Head: HeadFC = () => <Seo title="Personal Life" />;
 
-export default PersonalLifePage;
+export default PersonalLifeIndexPage;

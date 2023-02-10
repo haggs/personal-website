@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import * as styles from './PersonalLifePage.module.css';
 import Layout from '../../components/Layout/Layout';
 import Seo from '../../components/Seo/Seo';
 import { HeadFC, PageProps, graphql } from 'gatsby';
@@ -15,21 +16,21 @@ const PersonalLifePage: React.FC<
       .map((edge) => edge.node);
   }, [data.allFile.edges, data.mdx.parent.dir]);
 
-  console.log(filteredImages);
-  console.log(data.mdx.frontmatter.hero_image);
-  const image = getImage(data.mdx.frontmatter.hero_image);
-
   return (
     <Layout>
-      <p>{data.mdx.frontmatter.date}</p>
-      {children}
-      <ul>
-        {filteredImages.map((image) => (
-          <li>
-            <GatsbyImage image={getImage(image)} alt={image.name} />
-          </li>
-        ))}
-      </ul>
+      <div className={styles.container}>
+        <h1>{data.mdx.frontmatter.title}</h1>
+        <section>{children}</section>
+        <section>
+          <ul>
+            {filteredImages.map((image) => (
+              <li>
+                <GatsbyImage image={getImage(image)} alt={image.name} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
     </Layout>
   );
 };
@@ -39,13 +40,6 @@ export const query = graphql`
     mdx(id: { eq: $id }) {
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
-        hero_image_alt
-        hero_image {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
       }
       parent {
         ... on File {
