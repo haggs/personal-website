@@ -2,22 +2,16 @@ import * as React from 'react';
 import * as styles from './personal-life.module.css';
 import Layout from '../../components/Layout/Layout';
 import Seo from '../../components/Seo/Seo';
-import { HeadFC, graphql, Link } from 'gatsby';
-import UnderConstructionMessage from '../../components/UnderConstructionMessage/UnderConstructionMessage';
+import { HeadFC, graphql, Link, PageProps } from 'gatsby';
 
-interface PersonalLifePageProps {
-  data: any;
-}
-
-const PersonalLifePage: React.FC<PersonalLifePageProps> = ({ data }: any) => {
+const PersonalLifePage: React.FC<
+  PageProps<Queries.PersonalLifeIndexQueryQuery>
+> = ({ data }) => {
   return (
     <Layout>
       <section className={styles.container}>
         <h1>Personal Life</h1>
-        <UnderConstructionMessage />
-      </section>
-      {/* <div className={styles.container}>
-        {data.allMdx.nodes.map((node: any) => (
+        {data.allMdx.nodes.map((node) => (
           <article key={node.id}>
             <h2>
               <Link to={`/personal-life/${node.frontmatter.slug}`}>
@@ -27,19 +21,28 @@ const PersonalLifePage: React.FC<PersonalLifePageProps> = ({ data }: any) => {
             <p>Posted: {node.frontmatter.date}</p>
           </article>
         ))}
-      </div> */}
+      </section>
     </Layout>
   );
 };
 
 export const query = graphql`
-  query MyQuery {
-    allMdx(sort: { frontmatter: { date: DESC } }) {
+  query PersonalLifeIndexQuery {
+    allMdx(
+      sort: { frontmatter: { date: DESC } }
+      filter: { internal: { contentFilePath: { regex: "/personal-life/" } } }
+    ) {
       nodes {
         frontmatter {
           date(formatString: "MMMM D, YYYY")
           title
           slug
+          hero_image {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+          hero_image_alt
         }
         id
         excerpt

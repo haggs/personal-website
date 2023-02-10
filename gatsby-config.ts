@@ -34,6 +34,12 @@ const config: GatsbyConfig = {
         duration: 500,
       },
     },
+    {
+      resolve: 'gatsby-plugin-exclude',
+      // This fixes an issue where gatsby-plugin-mdx causes .mdx files
+      // from /jobs to be created as a page like /personal-life/null
+      options: { paths: ['/personal-life', '/personal-life/*'] },
+    },
   ],
 };
 
