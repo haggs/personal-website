@@ -3,17 +3,17 @@ import * as styles from './PersonalLifePage.module.css';
 import Layout from '../../components/Layout/Layout';
 import Seo from '../../components/Seo/Seo';
 import { HeadFC, PageProps, graphql } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import Gallery from '@browniebroke/gatsby-image-gallery';
 
 const PersonalLifePage: React.FC<
   PageProps<Queries.PersonalLifePageQueryQuery>
 > = ({ data, children }) => {
-  const filteredImages = useMemo(() => {
+  const images = useMemo(() => {
     const path = data.mdx.parent.dir;
     const dir = path.substring(path.lastIndexOf('/') + 1);
     return data.allFile.edges
       .filter((edge) => edge.node.dir.includes(path))
-      .map((edge) => edge.node);
+      .map((edge) => edge.node.childImageSharp);
   }, [data.allFile.edges, data.mdx.parent.dir]);
 
   return (
@@ -22,13 +22,7 @@ const PersonalLifePage: React.FC<
         <h1>{data.mdx.frontmatter.title}</h1>
         <section>{children}</section>
         <section>
-          <ul>
-            {filteredImages.map((image) => (
-              <li>
-                <GatsbyImage image={getImage(image)} alt={image.name} />
-              </li>
-            ))}
-          </ul>
+          <Gallery images={images} />
         </section>
       </div>
     </Layout>
@@ -52,12 +46,18 @@ export const query = graphql`
         extension: { regex: "/(jpg)|(jpeg)|(png)/" }
         dir: { regex: "/personal-life/" }
       }
+      sort: { relativePath: ASC }
     ) {
       edges {
         node {
           dir
           childImageSharp {
-            gatsbyImageData
+            thumb: gatsbyImageData(
+              width: 270
+              height: 270
+              placeholder: BLURRED
+            )
+            full: gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }

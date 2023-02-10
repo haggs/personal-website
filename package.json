@@ -18,6 +18,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@browniebroke/gatsby-image-gallery": "^7.2.1",
     "@fontsource/red-hat-display": "^4.5.12",
     "@fontsource/red-hat-mono": "^4.5.12",
     "@fontsource/source-code-pro": "^4.5.14",
