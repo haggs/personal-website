@@ -11,10 +11,6 @@ const defaultState: DarkModeState = {
 
 const DarkModeContext = React.createContext<DarkModeState>(defaultState);
 
-const deviceHasDarkModeOn = () =>
-  typeof window !== 'undefined' &&
-  window.matchMedia('(prefers-color-scheme: dark)').matches === true;
-
 class DarkModeProvider extends React.Component<
   PropsWithChildren,
   DarkModeState
@@ -34,10 +30,13 @@ class DarkModeProvider extends React.Component<
   componentDidMount() {
     // Getting dark mode value from localStorage!
     const darkModeFromLocalStorage = localStorage.getItem('dark');
+    const darkModeFromDevice =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches === true;
 
     if (darkModeFromLocalStorage) {
       this.setDark(JSON.parse(darkModeFromLocalStorage));
-    } else if (deviceHasDarkModeOn()) {
+    } else if (darkModeFromDevice) {
       this.setDark(true);
     }
   }

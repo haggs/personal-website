@@ -21,7 +21,7 @@ const PersonalLifePage: React.FC<
       <div className={styles.container}>
         <h1>{data.mdx.frontmatter.title}</h1>
         <section>{children}</section>
-        <section>
+        <section className={styles.gallerySection}>
           <Gallery images={images} />
         </section>
       </div>
