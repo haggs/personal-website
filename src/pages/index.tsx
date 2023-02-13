@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as styles from './index.module.css';
 import Seo from '../components/Seo/Seo';
 import Layout from '../components/Layout/Layout';
-import { HeadFC } from 'gatsby';
+import { HeadFC, Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { FiArrowDown } from '@react-icons/all-files/fi/FiArrowDown';
+import { FiArrowRight } from '@react-icons/all-files/fi/FiArrowRight';
 import classnames from 'classnames';
 import WorkExperience from '../components/WorkExperience/WorkExperience';
+import classNames from 'classnames';
 
 const IndexPage: React.FC = () => {
+  const [showCartoonProfilePic, setShowCartoonProfilePic] = useState(false);
+
   return (
     <Layout>
       <section className={styles.intro}>
@@ -41,14 +45,16 @@ const IndexPage: React.FC = () => {
               Work Life
               <FiArrowDown />
             </AnchorLink>
-            {/* <Link
-              className={classnames('link-accent', styles.lifeLink)}
+            <Link
+              className={classnames('mono', 'link-accent', styles.lifeLink)}
               to="/personal-life"
               title="Personal Life"
+              onMouseEnter={() => setShowCartoonProfilePic(true)}
+              onMouseLeave={() => setShowCartoonProfilePic(false)}
             >
               Personal Life
               <FiArrowRight />
-            </Link> */}
+            </Link>
           </div>
         </div>
         <div className={styles.profilePhotoContainer}>
@@ -56,7 +62,17 @@ const IndexPage: React.FC = () => {
             <StaticImage
               src="../images/profile-pic.jpg"
               alt="Dan Haggerty smiling wearing sunglasses"
-              className={styles.profilePhoto}
+              className={classNames(styles.profilePhoto, {
+                [styles.hidden]: showCartoonProfilePic,
+              })}
+              placeholder="none"
+            />
+            <StaticImage
+              src="../images/profile-pic-cartoon.jpg"
+              alt="Dan Haggerty smiling wearing sunglasses"
+              className={classNames(styles.profilePhoto, {
+                [styles.hidden]: !showCartoonProfilePic,
+              })}
               placeholder="none"
             />
           </div>

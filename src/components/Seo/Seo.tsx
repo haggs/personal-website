@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
 interface SeoProps {
-  title?: string;
+  title?: string | null;
 }
 
 const Seo: React.FC<SeoProps> = ({ title }) => {

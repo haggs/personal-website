@@ -9,21 +9,29 @@ const PersonalLifePage: React.FC<
   PageProps<Queries.PersonalLifePageQueryQuery>
 > = ({ data, children }) => {
   const images = useMemo(() => {
-    const path = data.mdx.parent.dir;
-    const dir = path.substring(path.lastIndexOf('/') + 1);
+    const path = data.mdx?.parent?.dir;
+
+    if (!path) {
+      return null;
+    }
+
     return data.allFile.edges
-      .filter((edge) => edge.node.dir.includes(path))
+      .filter(
+        (edge) => edge.node.dir.includes(path) && edge.node.childImageSharp
+      )
       .map((edge) => edge.node.childImageSharp);
-  }, [data.allFile.edges, data.mdx.parent.dir]);
+  }, [data.allFile.edges, data.mdx?.parent]);
 
   return (
     <Layout>
       <div className={styles.container}>
-        <h1>{data.mdx.frontmatter.title}</h1>
+        <h1>{data.mdx?.frontmatter?.title || 'Title?'}</h1>
         <section>{children}</section>
-        <section className={styles.gallerySection}>
-          <Gallery images={images} />
-        </section>
+        {images && (
+          <section>
+            <Gallery images={images} />
+          </section>
+        )}
       </div>
     </Layout>
   );
@@ -66,7 +74,7 @@ export const query = graphql`
 `;
 
 export const Head: HeadFC<Queries.PersonalLifePageQueryQuery> = ({ data }) => (
-  <Seo title={data.mdx.frontmatter.title} />
+  <Seo title={data.mdx?.frontmatter?.title} />
 );
 
 export default PersonalLifePage;

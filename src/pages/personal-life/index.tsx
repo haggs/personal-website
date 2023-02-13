@@ -14,8 +14,8 @@ const PersonalLifeIndexPage: React.FC<
         {data.allMdx.nodes.map((node) => (
           <article key={node.id}>
             <h2>
-              <Link to={`/personal-life/${node.frontmatter.slug}`}>
-                {node.frontmatter.title}
+              <Link to={`/personal-life/${node.frontmatter?.slug}`}>
+                {node.frontmatter?.title}
               </Link>
             </h2>
           </article>
@@ -34,13 +34,8 @@ export const query = graphql`
         frontmatter {
           title
           slug
-          hero_image {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
-          hero_image_alt
         }
+        id
       }
     }
   }
