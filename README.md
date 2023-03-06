@@ -1,1 +1,3 @@
-A Gatsby site made for my personal page, which is still under construction. This is just a fun project, not meant to be a professional quality repo.
+My personal website, [dhaggerty.com](https://dhaggerty.com). It's built using Gatsby with content (resume jobs and personal life stories) written in Markdown.
+
+Run `npm run gatsby develop` to start locally.
