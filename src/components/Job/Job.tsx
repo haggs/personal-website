@@ -23,6 +23,7 @@ const Job: React.FC<JobProps> = ({ jobQueryNode }) => {
     const options: Intl.DateTimeFormatOptions = {
       year: 'numeric',
       month: 'long',
+      timeZone: 'UTC',
     };
     return new Intl.DateTimeFormat('en-US', options).format(date);
   };
