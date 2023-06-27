@@ -21,19 +21,20 @@ const IndexPage: React.FC = () => {
           <h1 className={styles.title}>Dan Haggerty</h1>
           <h2>Full stack developer based in Detroit, Michigan.</h2>
           <p>
-            Hey, I'm Dan. I recently resigned from Twitter after 5 years working
-            on content review tools in the Trust & Safety space. I'm a full
-            stack developer who leans heavily towards the front end, and I'm
-            super into React/Typescript. During this time off between jobs, I've
-            been working on renovating my home and otherwise just enjoying this
-            moment.
+            Hey, I'm Dan. I'm a full-stack developer, home improvement
+            enthusiast, and new hire at NVIDIA working on UI for LLM apps. I
+            recently resigned from Twitter where I worked on content moderation
+            tools. I specialize in React, Typescript, and just generally
+            building polished UIs. Aside from all that, I'm usually working on
+            my house or out on the lake.
           </p>
           <p>
-            I'm open to work right now,{' '}
+            I'm <strong>not looking for work</strong> right now, but feel free
+            to{' '}
             <AnchorLink stripHash to="#contact" title="Contact me">
               contact me
             </AnchorLink>{' '}
-            if you need a senior full stack or frontend developer.
+            anyways.
           </p>
           <div className={styles.lifeLinksContainer}>
             <AnchorLink

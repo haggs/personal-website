@@ -9,10 +9,7 @@ interface ContactProps {
 const Contact: React.FC<ContactProps> = ({ className }) => {
   return (
     <section id="contact" className={classnames(className, styles.container)}>
-      <h1>Open to Work</h1>
-      <p>
-        Looking for a frontend or full stack web app developer? Reach out!
-      </p>
+      <h1>Say Hello</h1>
       <a className="mono link-accent" href="mailto:dan@dhaggerty.com">
         dan@dhaggerty.com
       </a>
