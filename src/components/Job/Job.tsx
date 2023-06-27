@@ -19,6 +19,10 @@ const Job: React.FC<JobProps> = ({ jobQueryNode }) => {
   }
 
   const formatDate = (dateString: string) => {
+    if (dateString.toLowerCase() === 'current') {
+      return dateString;
+    }
+
     const date = new Date(dateString + '-01');
     const options: Intl.DateTimeFormatOptions = {
       year: 'numeric',
@@ -57,10 +61,11 @@ const Job: React.FC<JobProps> = ({ jobQueryNode }) => {
           {job_title}
           {team && `, ${team}`} {contract && ' (Contract)'}
         </h3>
-        {start_date && end_date && (
+        {start_date && (
           <p>
             <FiCalendar className="icon-accent" />
-            {formatDate(start_date)} - {formatDate(end_date)}
+            {formatDate(start_date)} -{' '}
+            {end_date ? formatDate(end_date) : 'Today'}
           </p>
         )}
         <p>
