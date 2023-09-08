@@ -40,7 +40,7 @@ const config: GatsbyConfig = {
       // from /jobs to be created as a page like /personal-life/null
       options: { paths: ['/personal-life/null'] },
     },
-    'gatsby-plugin-netflify',
+    'gatsby-plugin-netlify',
   ],
 };
 
