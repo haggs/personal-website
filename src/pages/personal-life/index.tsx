@@ -5,7 +5,7 @@ import Seo from '../../components/Seo/Seo';
 import { HeadFC, graphql, Link, PageProps } from 'gatsby';
 
 const PersonalLifeIndexPage: React.FC<
-  PageProps<Queries.PersonalLifeIndexQueryQuery>
+  PageProps<Queries.PersonalLifeIndexPageQuery>
 > = ({ data }) => {
   return (
     <Layout>
@@ -26,7 +26,7 @@ const PersonalLifeIndexPage: React.FC<
 };
 
 export const query = graphql`
-  query PersonalLifeIndexQuery {
+  query PersonalLifeIndexPage {
     allMdx(
       filter: { internal: { contentFilePath: { regex: "/personal-life/" } } }
     ) {
