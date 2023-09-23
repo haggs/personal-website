@@ -13,14 +13,9 @@ const NavigationMenuButton: React.FC<NavigationMenuProps> = ({
   onClick,
   className,
 }) => {
-  const hamburgerClasses = classnames(
-    className,
-    styles.hamburger,
-    'icon-button',
-    {
-      [styles.menuOpen]: open,
-    }
-  );
+  const hamburgerClasses = classnames(className, styles.hamburger, 'icon-button', {
+    [styles.menuOpen]: open,
+  });
 
   return (
     <button

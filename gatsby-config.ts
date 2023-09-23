@@ -1,5 +1,4 @@
 import type { GatsbyConfig } from 'gatsby';
-import netflifyAdapter from 'gatsby-adapter-netlify';
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -10,9 +9,7 @@ const config: GatsbyConfig = {
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
-  adapter: netflifyAdapter(),
   plugins: [
-    'gatsby-plugin-netlify',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     {
@@ -43,18 +40,7 @@ const config: GatsbyConfig = {
       // from /jobs to be created as a page like /personal-life/null
       options: { paths: ['/personal-life/null'] },
     },
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: 'Dan Haggerty',
-        short_name: 'Dan Haggerty',
-        start_url: '/',
-        background_color: '#f8f9f7',
-        theme_color: '#cc4250',
-        display: 'standalone',
-        icon: 'src/images/icon.png',
-      },
-    },
+    'gatsby-plugin-netlify',
   ],
 };
 
