@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import * as styles from './index.module.css';
 import Seo from '../components/Seo/Seo';
 import Layout from '../components/Layout/Layout';
@@ -9,11 +9,8 @@ import { FiArrowDown } from '@react-icons/all-files/fi/FiArrowDown';
 import { FiArrowRight } from '@react-icons/all-files/fi/FiArrowRight';
 import classnames from 'classnames';
 import WorkExperience from '../components/WorkExperience/WorkExperience';
-import classNames from 'classnames';
 
 const IndexPage: React.FC = () => {
-  const [showCartoonProfilePic, setShowCartoonProfilePic] = useState(false);
-
   return (
     <Layout>
       <section className={styles.intro}>
@@ -50,8 +47,6 @@ const IndexPage: React.FC = () => {
               className={classnames('mono', 'link-accent', styles.lifeLink)}
               to="/personal-life"
               title="Personal Life"
-              onMouseEnter={() => setShowCartoonProfilePic(true)}
-              onMouseLeave={() => setShowCartoonProfilePic(false)}
             >
               Personal Life
               <FiArrowRight />
@@ -63,17 +58,7 @@ const IndexPage: React.FC = () => {
             <StaticImage
               src="../images/profile-pic.jpg"
               alt="Dan Haggerty smiling wearing sunglasses"
-              className={classNames(styles.profilePhoto, {
-                [styles.hidden]: showCartoonProfilePic,
-              })}
-              placeholder="none"
-            />
-            <StaticImage
-              src="../images/profile-pic-cartoon.jpg"
-              alt="Dan Haggerty smiling wearing sunglasses"
-              className={classNames(styles.profilePhoto, {
-                [styles.hidden]: !showCartoonProfilePic,
-              })}
+              className={styles.profilePhoto}
               placeholder="none"
             />
           </div>

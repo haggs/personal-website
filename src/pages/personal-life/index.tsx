@@ -2,21 +2,26 @@ import * as React from 'react';
 import * as styles from './PersonalLifeIndexPage.module.css';
 import Layout from '../../components/Layout/Layout';
 import Seo from '../../components/Seo/Seo';
-import { HeadFC, graphql, Link, PageProps } from 'gatsby';
+import { HeadFC, Link } from 'gatsby';
 
-const PersonalLifeIndexPage: React.FC<
-  PageProps<Queries.PersonalLifeIndexPageQuery>
-> = ({ data }) => {
+// ['Page Title', 'page-slug']
+const PAGES = [
+  ['Wedding', 'wedding'],
+  ['Mom', 'mom'],
+  ['Lake St. Clair', 'lake-st-clair'],
+  ['Italy', 'italy'],
+  ['Japan', 'japan'],
+];
+
+const PersonalLifeIndexPage: React.FC = () => {
   return (
     <Layout>
       <section className={styles.container}>
         <h1>Personal Life</h1>
-        {data.allMdx.nodes.map((node) => (
-          <article key={node.id}>
+        {PAGES.map(([title, slug]) => (
+          <article key={slug}>
             <h2>
-              <Link to={`/personal-life/${node.frontmatter?.slug}`}>
-                {node.frontmatter?.title}
-              </Link>
+              <Link to={`/personal-life/${slug}`}>{title}</Link>
             </h2>
           </article>
         ))}
@@ -24,22 +29,6 @@ const PersonalLifeIndexPage: React.FC<
     </Layout>
   );
 };
-
-export const query = graphql`
-  query PersonalLifeIndexPage {
-    allMdx(
-      filter: { internal: { contentFilePath: { regex: "/personal-life/" } } }
-    ) {
-      nodes {
-        frontmatter {
-          title
-          slug
-        }
-        id
-      }
-    }
-  }
-`;
 
 export const Head: HeadFC = () => <Seo title="Personal Life" />;
 
