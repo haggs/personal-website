@@ -6,11 +6,12 @@ import { HeadFC, Link } from 'gatsby';
 
 // ['Page Title', 'page-slug']
 const PAGES = [
+  ['Ireland', 'ireland'],
+  ['Japan', 'japan'],
+  ['Italy', 'italy'],
   ['Wedding', 'wedding'],
   ['Mom', 'mom'],
   ['Lake St. Clair', 'lake-st-clair'],
-  ['Italy', 'italy'],
-  ['Japan', 'japan'],
 ];
 
 const PersonalLifeIndexPage: React.FC = () => {
